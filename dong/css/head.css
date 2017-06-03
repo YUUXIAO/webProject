@@ -1,0 +1,118 @@
+body{ background: rgb(246,246,246); }
+a{ color: rgb(143,143,143); }
+
+header{ height: 30px; background: rgb(227,228,230); font-size: 12px; line-height: 30px;  color: rgb(143,143,143); position: relative;}
+header .topList{ width: 990px; height:100%; margin-left:280px;}
+header .topList a{  font-size: 12px; height: 100%; }
+
+/* 顶部定位区域 */
+header .address{  position: relative; }
+header .address>span{ width: 70px; height: 30px; background: url("../images/index_images/address.png") no-repeat 6px center; background-size: 20px 17px; padding-left: 27px;  color: rgb(143,143,143); box-sizing: border-box; float: left;border: 1px solid rgba(227,228,230,0); } 
+
+/* 顶部定位区域滑过样式 */
+header .address:hover .addressList{ display: block;  }
+header .address:hover span{ border: 1px solid rgb(200,200,200); border-bottom: 1px solid #fff; position: relative; z-index: 100; background-color: #fff; } 
+
+/* 顶部选择定位地域列表 */
+header .addressList{ width: 350px;border: 1px solid rgb(224,224,224);  display: none; padding: 10px 15px; position: absolute; left: 0; top: 29px; z-index: 1;box-shadow: 0 0 5px #ddd; background: #fff; }
+header .addressList li{ float: left; width: 70px; height: 25px; line-height: 25px; box-sizing: border-box; text-align: left ; margin: 1px 0; }
+header .addressList li a{ padding: 0 10px; font-size: 10px; }
+header .addressList li a:hover{ color: rgb(221,12,44);}
+header .addressList li a.add_checked{ background: rgb(221,12,44); color: #fff; }
+
+/* 顶部右边选项列表 */
+header .topNav{ float: right; }
+header .topNav>li{ float: left; }
+header .topNav li:nth-child(1) a img{ width: 40px; height: 16px; }
+header .topNav li a{ height: 30px; padding: 0 15px; border: 1px solid rgba(227,228,230,0); box-sizing: border-box; }
+header .topNav li a:hover{ color: rgb(221,12,44); }
+header .topNav li:nth-of-type(1) a,.topNav li:nth-of-type(3) a,.topNav li:nth-of-type(6) a,.topNav li:nth-of-type(7) a{ background: url("../images/index_images/down.png") no-repeat right center; background-size: 15px 15px;  }
+
+/* 滑过显示内容区域共同代码 */
+.navShow{ border: 1px solid rgb(224,224,224); display: none; position: absolute; left: 0px; top: 29px; box-shadow: 0 0 5px #ddd; background-color: #fff; }
+.topNav .hover{ position: relative; }
+.topNav .hover:hover a{border: 1px solid rgb(200,200,200); border-bottom: 1px solid #fff; position: relative;z-index: 100;background-color: #fff; }
+.topNav .hover:hover .navShow{ display: block; z-index: 40; }
+
+/* 顶部右边用户 */
+.rabbit .user{ position: absolute; width: 290px;border: 1px solid rgb(224,224,224);box-shadow: 0 0 5px #ddd;}
+.navShow .touxiang img{ width: 60px; height: 60px; border-radius: 50%; display: inline-block;}
+.navShow .touxiang{ padding: 10px 15px; }
+.navShow .touxiang_right{ float: right; }
+.navShow .touxiang_right p:nth-child(1){ background: url("../images/index_images/plus.png") no-repeat left center; padding-left: 150px; }
+.user .userScroll{ position: relative; }
+.user .userScroll .scroll{ position: relative; overflow: hidden; height: 80px; margin: 15px auto; width: 220px;  }
+.user .userScroll .scroll .dls{ position: absolute; width: 1000%; margin: 0 auto;}
+.user .userScroll .scroll .dls dl{ float: left; width: 60px;padding: 0 5px; margin-right: 6px;  }
+.user .userScroll .scroll .dls dt{ width: 60px; }
+.user .userScroll .scroll .dls dt img{ width: 50%; height: 50%;margin:10% 25%; }
+.user .userScroll .scroll .dls dd{ line-height: 35px; text-align: center;cursor: pointer;}
+.user .userScroll .scroll .dls dd:hover{ color:rgb(221,12,44); }
+
+.user .userScroll span{ display: inline-block; position: absolute; font-size: 30px; top: 15px; cursor: pointer; color: #ccc; font-style: normal;}
+.user .userScroll span:hover{ color:rgb(221,12,44); }
+.user .userScroll span.turnLeft{ left: 2px; }
+.user .userScroll span.turnRight{ right: 2px; }
+
+/* 顶部列表右边我的京东 */
+.topNav .myDong .navShow{ width: 250px; }
+.topNav .myDong .dong_top,.dong_bottom{  padding: 10px 15px; }
+.topNav .myDong em:hover,.my_dong span:hover{ color: rgb(221,12,44); cursor: pointer;  }
+.topNav .myDong em{ display: inline-block; float: right; text-align: left; width: 100px; }
+.topNav .myDong i{ color: rgb(221,12,44); }
+
+/*  顶部列表右边客户服务 */
+.topNav .service .navShow{ width: 180px; left: -101px; }
+.topNav .service .service_top,.service_bottom{  padding: 10px 15px; }
+.topNav .service em:hover,.service span:hover{ color: rgb(221,12,44); cursor: pointer;  }
+.topNav .service em{ font-style: normal; display: inline-block; float: right; text-align: left; width: 70px; }
+.topNav .service i{ color: rgb(221,12,44); }
+
+/* 顶部列表右边网站导航 */
+.topNav .website .navShow{ width:1190px; position: absolute; left:-1017px;/*  padding: 10px;  */box-sizing: border-box; }
+.topNav .website .navShow dl{ float: left; border-right: 1px solid #efefef; width: 270px; padding: 10px 10px 10px 15px;   }
+.topNav .website .navShow dl:nth-child(4){ border: none; }
+.topNav .website .navShow dl dt{ color: #333; font-weight: bold; margin-bottom: 10px; text-align: left;   }
+.topNav .website .navShow dl dd li{ text-align: left; width: 90px; height: 25px;  line-height: 25px; float: left; }
+.topNav .website .navShow dl dd ul li a{ background:#fff; padding: 0 ; border: 0; }
+/* 左边京东图片 */
+.JingDong{ position: absolute; left:80px; ;top:0; }
+/* 右边二维码图片 */
+.topNav .phone_Jing{ position: relative; }
+.topNav .phone_Jing .wei img{ width: 65px; height: 65px; position: absolute; left: 0; top: 35px;}
+
+/* 底部 */
+#footer{ width: 100%; height: 500px; font-family: Tahoma; margin-top: 30px; background: rgb(234,234,234); }
+#footer .top_footer{ width: 100%; height: 100px; border-bottom: 1px solid rgb(222,222,222); padding: 20px 100px; box-sizing: border-box; }
+#footer .top_footer li{ width: 25%; line-height: 60px; text-align: center; font-size: 18px; font-weight: bold; color: #333; float: left; }
+#footer .top_footer li:nth-child(1){ background: url("../images/index_images/much.png") no-repeat 15px center; background-size: 30px 30px;}
+#footer .top_footer li:nth-child(2){ background: url("../images/index_images/quick.png") no-repeat 15px center; background-size: 30px 30px;}
+#footer .top_footer li:nth-child(3){ background: url("../images/index_images/footer_good.png") no-repeat 15px center; background-size: 40px 40px;}
+#footer .top_footer li:nth-child(4){ background: url("../images/index_images/less.png") no-repeat 15px center; background-size: 30px 30px;}
+#footer a{ color: rgb(102,102,102); }
+
+#footer .mid_footer{ width: 100%; height: 200px; border-bottom: 1px solid rgb(222,222,222); padding: 20px 100px; box-sizing: border-box; } 
+#footer .mid_footer dl{ width: 20%; box-sizing: border-box; height: 100%;  text-align: center; border-right:  1px solid rgb(222,222,222); float: left; }
+#footer .mid_footer dl:nth-child(5){ border-right: 0; }
+#footer .mid_footer dl dt{ font-size: 14px; font-weight: bold; color: rgb(102,102,102); line-height: 30px; }
+#footer .mid_footer dl dd{ font-size: 12px; line-height: 20px; }
+#footer .mid_footer dl dd a:hover{ color: rgb(200,22,35); }
+
+#footer .bot_footer{ padding: 20px 100px; box-sizing: border-box; }
+#footer .bot_footer li{ float: left; border-right: 1px solid #aaa; font-size: 12px; }
+#footer .bot_footer li a{ padding: 0 13px; }
+#footer .bot_footer li a:hover{ color: rgb(200,22,35); }
+#footer .bot_footer .about{ margin-bottom: 20px; }
+#footer .bot_footer .about li:last-child{ border-right: 0; }
+#footer .bot_footer .num li{ color: rgb(153,153,153);  padding: 0 10px; border-right: 0; line-height: 25px; }
+#footer .bot_footer .num{ margin: 25px auto; }
+#footer .bot_footer .num1{ width: 880px;  }
+#footer .bot_footer .num2{ width:960px;  }
+#footer .bot_footer .num3{ width: 620px;  }
+#footer .bot_footer .num4{ width: 240px;  }
+
+#footer .bot_footer .dls{ width: 730px; margin: 0 auto; }
+#footer .bot_footer .dls dl{ float: left;  margin-top: 20px; font-size: 12px; color: rgb(102,102,102);  }
+#footer .bot_footer .dls dt{ float: left; padding:5px 10px; }
+#footer .bot_footer .dls dt img{ width: 25px; height: 25px; }
+#footer .bot_footer .dls dd{ width: 120px;}
