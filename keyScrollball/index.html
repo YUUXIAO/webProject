@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>键盘控制小球</title>
+<style>
+	body{background:#ccc;}
+	#box{
+		width:100px;
+		height:100px;
+		background:black;
+		border:2px solid #fff;
+		position:absolute;
+		border-radius:50px;	
+	}
+</style>
+<script>
+	window.onload=function(){
+		var box=document.getElementById("box");
+		var clientWidth=document.body.clientWidth||document.documentElement.clientWidth;
+		var clientHeight=document.body.clientHeight||document.documentElement.clientHeight;
+		var timer=null;
+		
+		document.onkeydown=function(ev){
+			var ev=ev||event;
+			clearInterval(timer);
+			timer=setInterval(function() {
+				switch (ev.keyCode) {
+					case 37:
+						if(box.offsetLeft>0){
+							box.style.left= box.offsetLeft- 10 +"px";
+						}
+						break;
+					case 38:
+						if( box.offsetTop>0){
+							box.style.top= box.offsetTop- 10 +"px";
+						}
+						break;
+					case 39:
+						if( box.offsetLeft<clientWidth-box.offsetWidth){
+							box.style.left= box.offsetLeft+ 10 +"px";
+						}
+						break;
+					case 40:
+						if( box.offsetTop<clientHeight-box.offsetHeight){
+							box.style.top= box.offsetTop+ 10 +"px";
+						}
+						break;
+				}
+			},10);
+
+		}
+		document.onkeyup=function() {
+			clearInterval(timer);
+		}
+
+	}
+</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>
