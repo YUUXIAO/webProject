@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* CSS Document */
+a{ font-size: 12px;	color: #3276ab; }
+
+#myPage{ 
+	width: 950px; 
+	margin: 0 auto; 
+}
+#mypage-left{ 
+	float: left; 
+	width: 600px;
+}
+#mypage-left .top{ 
+	height: 50px; 
+	margin-bottom: 10px;
+}
+#mypage-left .top img{ 
+	display: inline-block;
+	width: 50px; height: 50px;
+	float: left;
+	margin-right: 10px;
+}
+#mypage-left .top span{
+	font-size: 24px;
+	font-weight: bolder;
+	font-family: Fixedsys, "微软雅黑";
+	color: #444;
+}
+#mypage-left .top em{
+	font-size: 12px;
+	color: #666;
+}
+#mypage-left .nine li{ float: left; }
+#mypage-left .nine li a{
+	font-size: 12px;
+	margin-right: 15px;
+}
+#mypage-left .nine{ margin-bottom: 80px; }
+#mypage-left #lis li{
+	width: 100%;
+	margin-bottom: 50px;
+	padding-right: 10px;
+}
+#mypage-left #lis li p{
+	font-size: 12px;
+	margin-top: 10px;
+}
+#mypage-left #lis li em{
+	font-size: 16px;
+	color: #007622;
+}
+#mypage-left #lis li input{
+	float: right;
+	color: #666;
+	padding: 2px 5px;
+	margin-left: 5px;
+}
+#mypage-left #lis li:nth-child(2) img{ margin-bottom: 5px; }
+#mypage-left #lis li:nth-child(3) img{
+	margin-bottom: 5px;
+	padding: 5px;
+}
+#mypage-left #lis .mess{ margin-top: 5px; }
+#mypage-left #lis .mess input{
+	float: left;
+	width: 50px; height:25px;
+}
+/* 右边栏 */
+#mypage-right{ 
+	float: right;
+	width: 300px;
+}
+#mypage-right .photo{
+	background: #fff5ed;
+	height: 200px;
+	padding: 10px;
+}
+#mypage-right .photo img{ float: left; }
+#mypage-right .photo span{
+	font-size: 12px;
+	color: #666;
+}
+#mypage-right .rig-lis li{ margin-top: 30px; }
+#mypage-right .rig-lis h3{
+	color: green;
+	display: inline-block;
+}
+#mypage-right .rig-lis p{
+	font-size: 12px;
+	margin-top: 10px;
+}
+/* 右边栏结束 */
+
+/* 日记弹框 */
+#mask{
+	width: 100%; height: 100%;
+	background: black;
+	opacity: 0.8; filter: alpha(opacity=80);
+	position: absolute;
+	left: 0; top: 0;
+	display: none;
+}
+#diary{ 
+	width: 500px; height: 742px;
+	padding: 10px 20px; 
+	box-shadow: 0 0 15px #ddd;
+	background: #fff;
+	display: none;
+	position: absolute;
+	border-radius: 3px;
+}
+#diary>span{  
+	width: 25px; height: 25px;
+	font-size: 20px;
+	text-align: center;
+	line-height: 25px;
+	border-radius: 50%;
+	float: right; 
+}
+#diary>span:hover{ 
+	color: #e3393c;
+	cursor: pointer;
+}
+#diary .title,.tag{ 
+	width: 500px; height: 30px;
+	text-indent: 1em;
+	margin: 5px 0;
+	border: 1px solid #ddd;
+}
+#diary textarea{ 
+	width: 480px; height: 290px;
+	margin: 10px 0;
+	padding: 10px;
+	outline: 0;
+	border: 1px solid #ddd;
+}
+#diary p{ font-size: 16px; line-height: 1.8; margin-top: 10px; }
+#diary p span{ float: right; }
+#diary p .btn{ 
+	width: 50px; height: 27px;
+	background: #f2f2f2;
+	border: 1px solid #bbb;
+	border-radius: 3px;
+	margin-left: 5px;
+	text-indent: 0;
+	cursor: pointer;
+}
+#diary p.set{ font-size: 14px; }
+#diary p.set label{ font-size: 12px; color: #555; }
+#diary p .submit,#diary p .reset{
+	width: 70px; height: 35px;
+	line-height: 35px;
+	font-size: 16px;
+	color: #333;
+	border-radius: 3px;
+}
+#diary p .submit{ 
+	background: #3fa156; 
+	border: 1px solid #528641;
+	color: #fff;
+	margin-left: 10px
+}
+/* 日记弹框线束 */
+
+
+

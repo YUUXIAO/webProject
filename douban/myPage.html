@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>我的主页</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/myPage.css">
+</head>
+<body>
+<!-- 头部 -->
+<div id="header">
+    <div id="list">
+        <ul>
+            <li><a href="#">豆瓣</a></li>
+            <li><a href="#">读书</a></li>
+            <li><a href="#">电影</a></li>
+            <li><a href="#">音乐</a></li>
+            <li><a href="#">同城</a></li>
+            <li><a href="#">小组</a></li>
+            <li><a href="#">阅读</a></li>
+            <li><a href="#">F M</a></li>
+            <li><a href="#">东西</a></li>
+            <li><a href="#">集市</a></li>
+            <li><a href="#">更多</a></li>
+        </ul>
+        <div class="head-rig">
+            <span>
+                <a id="downLoad" href="#">下载豆瓣客户端</a>
+                <img src="images/main/douban.png" />    
+            </span>
+            <span><a href="#">豆邮</a></span>
+            <span><a href="#">提醒</a></span>
+            <span>
+                <a id="count" href="#">NINY的帐号</a>
+                <ul>
+                    <li><a href="myPage.html">个人主页</a></li>
+                    <li>我的订单</li>
+                    <li>我的钱包</li>
+                    <li>账号管理</li>
+                    <li>退出</li>
+                </ul>
+            </span>
+        </div>
+    </div>
+    <div id="search">
+        <a href="main.html"><img src="images/main/douban.jpg" /></a>
+        <ul>
+            <li><a href="main.html">首页</a></li>
+            <li><a href="myPage.html">我的豆瓣</a></li>
+            <li><a href="music.html">豆瓣音乐</a></li>
+            <li><a href="#">移动应用</a></li>
+            <li><a href="#">游戏</a></li>
+            <li><a href="#">线上活动</a></li>
+        </ul>
+        <input type="text" placeholder="搜索你感兴趣的内容和人..."/>
+    </div>
+</div>
+<!-- 头部线束 -->
+<div id="content">
+    <div id="myPage">
+        <!-- 左边栏 -->
+        <div id="mypage-left">
+            <div class="nine">
+                <div class="top">
+                    <img src="images/myPage/myHead.jpg" />
+                    <span>NINE</span>
+                    <em>添加签名档</em>
+                </div>
+                <ul>
+                   <li><a href="#">我的主页</a></li>
+                   <li><a href="#">广播</a></li>
+                   <li><a href="#">相册</a></li>
+                   <li><a href="#">日记</a></li>
+                   <li><a href="#">喜欢</a></li>
+                   <li><a href="#">豆列</a></li>
+                   <li><a href="#">设置</a></li>
+               </ul>
+            </div>
+            <ul id="lis">
+                <li>
+                    <span>
+                        <em>我的日记...</em><a href="#">全部</a>
+                        <input type="button" id="write" value="+写日记" />
+                    </span>
+                    <p>在豆瓣上写日记，记录自己的生活、想法。</p>
+                </li>
+                <li>
+                    <p>
+                        <em>我的相册...</em><a href="#">创建1 关注0</a>
+                        <input type="button" value="+发照片" />
+                        <input type="button" value="+新建相册" />
+                    </p>
+                    <img src="images/myPage/abulm.png" /><a href="#">第一个相册</a>
+                    <p style="color:#666;">2017-01-04更新</p>
+                </li>
+                <li>
+                    <p><em>我读...</em><a href="#">1本想读</a></p>
+                    <img src="images/myPage/book.jpg" /><a href="#">第一个相册</a>
+                </li>
+                <li>
+                    <p><em>留言板...</em><a href="#">全部</a></p>
+                    <textarea rows="10" cols="70" ></textarea>
+                    <div class="mess"><input type="button" value="留言"/></div>
+                </li>
+            </ul>
+
+        </div>
+        <!-- 左边栏结束 -->
+		
+        <!-- 右边栏 -->
+        <div id="mypage-right">
+       <div class="photo">
+           <img src="images/myPage/myHead.jpg" />
+           <span>137607571<br />2015-11-14加入</span>
+       </div>
+       <div class="rig-lis">
+            <ul>
+                <li>
+                    <p>
+                        <h3>我的广播...</h3><a href="#">全部</a>
+                    </p>
+                    <p><a href="#">&gt; 我被0人关注</a></p>
+                </li>
+                <li>
+                    <p><a href="#">&gt; 添加我的豆瓣收藏秀</a></p>
+                </li>
+                <li>
+                    <p><a href="#">订阅我的收藏: </a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 右边栏结束 -->
+    <div style="clear: both"></div>
+    </div>
+        <!-- 页脚 -->
+        <div id="footer">
+       © 2005－2017 douban.com, all rights reserved 北京豆网科技有限公司 
+       <ul>
+           <li><a href="#">关于豆瓣·</a></li>
+           <li><a href="#">在豆瓣工作 ·</a></li>
+           <li><a href="#">联系我们 ·</a></li>
+           <li><a href="#">免责声明 ·</a></li>
+           <li><a href="#">帮助中心 ·</a></li>
+           <li><a href="#">移动应用 ·</a></li>
+           <li><a href="#">豆瓣广告</a></li>
+       </ul>
+    </div>
+        <!-- 页脚结束 -->
+</div>
+
+<!-- 日记弹框 -->
+<div id="mask"></div>
+<div id="diary">
+    <span id="close">&times;</span>
+    <form id="form">
+        <h2>新加日记</h2>
+        <label>
+            <p>题目:</p>
+            <input type="text" class="title" name="title" placeholder="请输入日记标题">
+        </label>
+        <label>
+            <p>正文:
+                <span>
+                    <input type="button" value="图片" class="btn">
+                    <input type="button" value="视频" class="btn">
+                    <input type="button" value="链接" class="btn">
+                </span>
+            </p>
+            <textarea name="content" id="conten"></textarea>
+        </label>
+        <label>
+            <p>标签:</p>
+            <input type="text" class="tag" name="tag" placeholder="添加标签，多个标签用空格分隔，帮助你更好地整理内容">
+        </label>
+        <p class="set">设置可见:　
+            <label><input type="radio" name="see" checked> 所有人可见　</label>
+            <label><input type="radio" name="see"> 仅朋友可见　</label>
+            <label><input type="radio" name="see"> 仅自己可见　</label>
+        </p>
+        <p class="set">权限设置:　
+            <label><input type="checkbox" name="privilage"> 不允许回应　</label>
+        </p>
+        <p class="set">版权声明:　
+            <label>
+                <input type="checkbox" name="privilage"> 这是我的原创内容，我已阅读并同意<a href="">《豆瓣原创声明》</a>
+            </label>
+        </p>
+        <p>
+            <input type="reset" name="reset" class="reset btn" value="重置">
+            <input type="submit" id="submit" name="submit" class="submit btn" value="发表">
+        </p>
+    </form>
+</div>
+<!-- 日记弹框结束 -->
+
+<script type="text/javascript" src="./js/head.js"></script>
+<script type="text/javascript" src="./js/myPage.js"></script>
+</body>
+</html>

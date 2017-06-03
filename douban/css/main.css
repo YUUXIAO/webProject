@@ -1,0 +1,197 @@
+#main{
+	width: 950px;
+	margin: 0 auto;
+}
+#left{
+	width: 600px;
+	float: left;
+}
+#left .say{
+	height: 55px;
+	padding: 5px;
+	margin-bottom: 20px;
+}
+#left .say img,li{ vertical-align: middle; }
+#left .say li{
+	width: 80px;
+	text-align: center;
+	float: left;
+}
+#left .say a{
+	font-size: 12px;
+	color: #999;
+	margin-left: 5px;
+}
+#left .say span{
+	font-size: 12px;
+	color: #999;
+	float: right;
+	margin-top: 5px;
+}
+#left .say input{
+	border: 1px solid #999;
+	width: 100%; height: 30px;
+	margin-top: 10px;
+	text-indent: 5px;
+	background: url(../images/main/6.png) no-repeat 560px center;
+}
+#left .list li{
+	width: 100%; height: 170px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+}
+#left .list li:last-child{ border: 0; }
+#left .list img{ float: left; }
+#left .list .box{
+	width: 534px;
+	float: right;
+}
+#left .list .box span{
+	font-size: 12px;
+	color: #999;
+}
+#left .list .box strong{ color: #000; }
+#left .list .text{
+	background: #f9f9f9;
+	padding: 5px;
+	margin: 10px 0;
+}
+#left .list .text a{
+	margin-top: 5px;
+	color: #3276ab;
+}
+#left .list .text p{
+	font-size: 12px;
+	margin-top: 5px;
+	line-height: 20px;
+	color: #666;
+	padding-bottom: 10px;
+}
+#left .list .text img{
+	float: right;
+	margin: 5px;
+	height: 61px; width: 110px;
+}
+
+#right{
+	width: 300px;
+	float: right;
+}
+#right .rig-top{
+	width: 250px;
+	padding: 20px;
+	background: #f3f7f7;
+	margin: 20px auto;
+	margin-right: 0;
+	box-sizing: border-box;
+}
+#right .rig-top h3{
+	color: #007622;
+	margin-bottom: 10px;
+}
+#right .rig-top a{
+	color: #3276ab;
+	font-size: 12px;
+	line-height: 30px;
+}
+#right .ad{ 
+	box-sizing: border-box;
+	margin-bottom: 30px;
+}
+#right .ad img{
+	width: 250px; height: 210px;
+	display: block;
+	margin: 0 auto;
+	margin-right: 0;
+}
+
+/* 热门话题 */
+.hotTopic{
+	width: 250px;
+	float: right;
+	padding-bottom: 20px;
+}
+.hotTopic h4,.attention h4,.activity h4{
+	color: #007622;
+	font-size: 20px;
+	display: inline-block;
+}
+.hotTopic a.more,.attention .more,.activity .more{ float: right; line-height: 30px; }
+.hotTopic a,.attention a,.activity a{ color: #3276ab; font-size: 13px; }
+.hotTopic a:hover,.attention a:hover,.activity a:hover{ text-decoration: underline; }
+
+.hotTopic dl{ 
+	margin-top: 10px; 
+	line-height: 20px; 
+	color: #555;
+}
+.hotTopic dd em{ float: right; }
+/* 热门话题结束 */
+
+/* 我的关注 */
+.attention,.activity{
+	width: 250px;
+	padding-bottom: 20px;
+	float: right;
+}
+.attention span{
+	float: right;
+}
+.attention p,.activity p{ margin-top: 10px; }
+/* 我的关注结束 */
+
+/* 热门活动 */
+.activity p span{
+	color: #aaa;
+}
+/* 热门活动结束 */
+
+#right img{
+	display: block;
+	width: 250px; height: 80px;
+	margin: 0 auto;
+	margin-right: 0;
+}
+#right img.ad1{
+	height: 200px;
+}
+
+.fixed{
+	width: 250px;
+	position: fixed;
+	top:0; right: 200px;
+}
+.fixed p span{
+	color: #aaa;
+}
+/* 页码 */
+.page{
+	width: 400px;
+	margin: 10px auto;
+}
+.page span,.page span a{
+	color: #555;
+	font-size: 14px;
+}
+.page ul{
+	margin: 0 20px;
+	display: inline-block;
+}
+.page li{
+	float: left;
+	margin: 0 7px;
+}
+.page li:first-child a{
+	color: #fff;
+	background: #83bf72;
+}
+.page li a{
+	font-size: 14px;
+	padding:0 3px;
+	color: #3276ab;
+}
+.page li a:hover{
+	color: #fff;
+	background: #3276ab;
+}
+/* 页码结束 */
