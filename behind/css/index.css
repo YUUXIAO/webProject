@@ -1,0 +1,13 @@
+body{
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+.bug{
+    margin-top: 60px;
+}
+
+/*footer*/
+footer{
+    font-weight: 400;
+    text-align: center;
+    padding:20px ;
+}
