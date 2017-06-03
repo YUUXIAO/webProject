@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>打乱图片</title>
+<style>
+	*{margin:0;padding:0;}
+	#box{font-size:16px;text-align:center;margin:50px auto;}
+	input{width:80px;height:30px;line-height:30px;background:#396;color:#fff;}
+	#tab{margin:30px auto;}
+	#tab ul{list-style:none;width:1000px;margin:0 auto;}
+	#tab li img{width:300px;height:200px;margin:20px 10px;}
+	#tab li{float:left;cursor:pointer;}
+</style>
+<script>
+	window.onload=function(){
+		var aBut=document.getElementsByTagName("input");
+		var aLi=document.getElementById("tab").getElementsByTagName("li");
+		var arr1=[];
+		var arr2=[];
+		var arr3=[];
+		
+		for(var i=0;i<aLi.length;i++){
+			arr1.push(aLi[i].getElementsByTagName("img")[0].src);
+			arr2.push(aLi[i].getElementsByTagName("span")[0].innerHTML);
+			arr3.push(i);
+			
+		}
+		var onOff=true;
+		aBut[0].onclick=function(){
+			if(onOff){
+				arr3.sort(function(a,b){
+					return b-a;
+				})
+			}else{
+				arr3.sort(function(a,b){
+					return a-b;
+				})
+			}
+			change();
+			onOff=!onOff;
+		}
+		
+		aBut[1].onclick=function(){
+			arr3.sort(function(a,b){
+				return Math.random()-0.5;
+			})
+			change();
+		}
+		
+		function change(){
+			for(var i=0;i<arr3.length;i++){
+				aLi[i].getElementsByTagName("img")[0].src=arr1[arr3[i]];
+				aLi[i].getElementsByTagName("span")[0].innerHTML=arr2[arr3[i]];
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<div id="box">
+	<input type="button" value="顺序排列"/>
+    <input type="button" value="随机"/>
+    <div id="tab">
+        <ul>
+           <li>
+           	<img src="ads/1.jpg" /><br />
+            <span>1.图片一</span>
+           </li>
+          <li>
+           	<img src="ads/2.jpg" /><br />
+            <span>2.图片二</span>
+           </li>
+           <li>
+           	<img src="ads/3.jpg" /><br />
+            <span>3.图片三</span>
+           </li>
+           <li>
+           	<img src="ads/4.jpg" /><br />
+            <span>4.图片四</span>
+           </li>
+           <li>
+           	<img src="ads/5.jpg" /><br />
+            <span>5.图片五</span>
+           </li>
+           <li>
+           	<img src="ads/1.jpg" /><br />
+            <span>6.图片六</span>
+           </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

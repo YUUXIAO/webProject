@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>CSS3制造广告轮播</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		#main{ 
+			width: 948px; height: 260px; 
+			position: relative; 
+			border: 5px solid #000; 
+			margin: 30px auto; 
+		} 
+		#main .tabs{ display: none; }
+		#main input.tabs + label div{
+			height: 65px; width: 261px;
+			position: absolute; 
+			background: #414141;
+			filter: Alpha(opacity=80); -moz-opacity: 0.8; opacity: 0.8;
+		}
+		input.tabs + label dl{ padding: 8px 15px; }
+		input.tabs + label dl dt{
+			width:40px; height:48px; 
+			float:left; 
+			padding-right:15px;
+		}
+		input.tabs + label dl dd.title{
+			font-size:14px; 
+			color:#fff; 
+		}
+		input.tabs + label dl dd{ 
+			font-family:"微软雅黑"; 
+			color:#E3E3E3; 
+			font-size:12px; 
+			line-height:20px;
+		}
+		input.tabs:checked + label  dl{ background: -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(0, 0, 0, .65)), color-stop(1, transparent));}
+
+		.tp{ 
+			height:0px; 
+			-webkit-transition:height 0.5s ease; 
+			display:block;
+		}
+		/* 点击相应的单选框相对应图片按照高度过渡出现 */
+		input#tab1:checked ~ #img1{ height:260px; }
+		input#tab2:checked ~ #img2{ height:260px; }
+		input#tab3:checked ~ #img3{ height:260px; }
+		input#tab4:checked ~ #img4{ height:260px; }
+
+		input.tabs + label .bg1{ right:0px; top:0px; }
+		input.tabs + label .bg2{ right:0px; top:65px; }
+		input.tabs + label .bg3{ right:0px; top:130px; }
+		input.tabs + label .bg4{ right:0px; top:195px; }
+	</style>
+</head>
+<body>
+	<div id="main">
+		<!-- 用单选框来实现单选 -->
+		<input type="radio" name="tab" id="tab1" class="tabs" checked="checked">
+		<label for="tab1">
+			<div class="bg1">
+				<dl id="dl1">
+					<dt><img src="images/but1.png" width="40" /></dt>
+					<dd class="title">精心挑选，倾情推荐</dd>
+					<dd>推荐精品应用，享受多彩上网</dd>
+				</dl>
+			</div>
+		</label>
+		<input type="radio" name="tab" id="tab2" class="tabs">
+		<label for="tab2">
+			<div class="bg2">
+				<dl id="dl2">
+					<dt><img src="images/but2.png" width="40" /></dt>
+					<dd class="title">精心挑选，倾情推荐</dd>
+					<dd>推荐精品应用，享受多彩上网</dd>
+				</dl>
+			</div>
+		</label>
+		<input type="radio" name="tab" id="tab3" class="tabs">
+		<label for="tab3">
+			<div class="bg3">
+				<dl id="dl3">
+					<dt><img src="images/but3.png" width="40" /></dt>
+					<dd class="title">精心挑选，倾情推荐</dd>
+					<dd>推荐精品应用，享受多彩上网</dd>
+				</dl>
+			</div>
+		</label>
+		<input type="radio" name="tab" id="tab4" class="tabs">
+		<label for="tab4">
+			<div class="bg4">
+				<dl id="dl4">
+					<dt><img src="images/but4.png" width="40" /></dt>
+					<dd class="title">精心挑选，倾情推荐</dd>
+					<dd>推荐精品应用，享受多彩上网</dd>
+				</dl>
+			</div>
+		</label>
+		<!-- 左边图片内容 -->
+		<img src="images/1.png" class="tp" id="img1"/>
+		<img src="images/2.png" class="tp" id="img2"/>
+		<img src="images/3.png" class="tp" id="img3"/>
+		<img src="images/4.png" class="tp" id="img4"/>
+	</div>
+</body>
+</html>

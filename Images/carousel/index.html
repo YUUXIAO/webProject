@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>百页窗效果轮播图</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		.main{ width: 900px; height: 500px; position: relative; }
+		.content{ width: 100%; height: 100%; }
+		.content>div{ width: 225px; height: 100%; background: #333; float: left; position: relative; overflow: hidden; }
+		.content>div span{ width: 100%; height: 100%; display: block; background: #fff; position: absolute; top: 0; left: 225px; }
+
+		input#btn1:checked~.content div span:nth-child(1){ background-image: url("./images/1.jpg") }
+		input#btn2:checked~.content div span:nth-child(2){ background-image: url("./images/2.jpg") }
+		input#btn3:checked~.content div span:nth-child(3){ background-image: url("./images/3.jpg") }
+		input#btn4:checked~.content div span:nth-child(4){ background-image: url("./images/4.jpg") }
+
+		.content div:nth-child(1) span{ background-position: 0px 0px; }
+		.content div:nth-child(2) span{ background-position: -225px 0px; }
+		.content div:nth-child(3) span{ background-position: -450px 0px; }
+		.content div:nth-child(4) span{ background-position: -675px 0px; }
+
+		input#btn1:checked ~ .content div span:nth-child(1),
+		input#btn2:checked ~ .content div span:nth-child(2),
+		input#btn3:checked ~ .content div span:nth-child(3),
+		input#btn4:checked ~ .content div span:nth-child(4)
+		{ left:0px; -webkit-transition:left 0.5s ease; }
+
+		label{ width:30px; height: 30px; background: #333; color: #fff; display:block; border-radius:50%; text-align:center; line-height:30px; position: absolute; z-index:333; top: 450px; cursor: pointer; }
+
+		input#btn1 + label{ left:700px; }
+		input#btn2 + label{ left:750px; }
+		input#btn3 + label{ left:800px; }
+		input#btn4 + label{ left:850px; }
+
+		input:checked + label{ background: rgba( 220,220,220,0.5 );}
+		input{ display:none; }
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		<input type="radio" name="btn" id="btn1" checked>
+		<label for="btn1">1</label>
+		<input type="radio" name="btn" id="btn2" >
+		<label for="btn2">2</label>
+		<input type="radio" name="btn" id="btn3" >
+		<label for="btn3">3</label>
+		<input type="radio" name="btn" id="btn4" >
+		<label for="btn4">4</label>
+		<div class="content">
+			<div>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

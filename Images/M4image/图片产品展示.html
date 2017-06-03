@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		#content{ width: 862px; height: 515px; border: 2px solid #000; margin: 20px auto; position: relative; }
+		.top{ width: 50%; position: absolute; left:0; top :0;z-index: 1;overflow: hidden; }
+		.bar{ width:10px; height:100%; background: red; position: absolute; left:50%; top:0; z-index: 2; }
+	</style>
+	<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+	<script>
+	window.onload = function(){
+
+		var content = document.getElementById("content");
+		var top = content.getElementsByTagName("div")[0];
+		var bottom = content.getElementsByTagName("div")[1];
+		var bar = content.getElementsByTagName("div")[2];
+
+		//当鼠标在图片上移动
+		content.onmousemove = function( ev ){
+
+			var ev = ev || event;
+			var left = ev.clientX - this.offsetLeft;
+
+			if( left<0 ){
+				left = 0;
+			}else if( left>= this.offsetWidth-bar.offsetWidth ){
+				left = this.offsetWidth-bar.offsetWidth;
+			}
+
+			bar.style.left = left + "px";
+			bar.style.transition = "";
+			top.style.width = left + "px";
+			top.style.transition = "";
+		}
+		//当鼠标离开图片
+		content.onmouseout = function(){
+
+			bar.style.left = "50%";
+			bar.style.transition = "1s";
+			top.style.width = "50%";
+			top.style.transition = "1s";
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="content">
+		<div class="top">
+			<img src="img/1.jpg" alt="" />
+		</div>
+		<div class="bottom">
+			<img src="img/2.jpg" alt="" />
+		</div>
+		<div class="bar"></div>
+	</div>
+</body>
+</html>

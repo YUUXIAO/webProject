@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+		ul{ list-style: none; }
+		*{ margin: 0;padding: 0; }
+		#ads{
+			width: 590px; height: 250px;
+			border: 15px solid #999;
+			margin: 20px auto;
+			position: relative;
+		}
+		#ads img{
+			width: 100%; height: 100%;
+			position: absolute;
+			left: 0; top: 0;
+			opacity: 0;
+			animation-timing-function: linear;
+			animation-duration:0.5s;
+			animation-fill-mode:forwards;
+		}
+		#ads img.show{
+			animation-name: show;
+		}
+		#ads img.unshow{
+			animation-name: disapper;
+		}
+		#ads ul{
+			position: absolute;
+			bottom: 10px; left: 240px; 
+		}
+		#ads ul li{
+			width: 12px; height: 12px;
+			float: left;
+			background: rgba(255,255,255,0.7);
+			margin-right: 8px;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		#ads ul li.active{ background: orange; }
+		@keyframes show{
+			from{opacity;}
+			to{opacity:1;}
+		}
+		@keyframes disappear{
+			from{opacity:1;}
+			to{opacity:0;}
+		}
+	</style>
+	<script>
+	window.onload = function(){
+		var ads = document.getElementById("ads");
+		var imgs = ads.getElementsByTagName("img");
+		var lits = ads.getElementsByTagName("li");
+		var timer = null;
+		var cur = 0;
+		var len = lits.length;
+
+		 // 定义并调用自动播放函数
+		timer = setInterval( autoPlay,1000 );
+
+		//鼠标滑过容器停止播放
+		ads.onmouseover = function(){
+			clearInterval( timer );
+		}
+		// 鼠标离开容器时继续播放下一张
+		ads.onmouseout = function(){
+			timer = setInterval( autoPlay,1000 );
+		}
+		// 遍历所有圆点导航实现划过切换至对应的图片
+		for( var i =0; i<len; i++ ){
+			(function(j){
+				lits[j].onclick = function(){
+					changePic(j);
+					cur = j;
+				}
+			})(i);
+		}
+
+
+		function autoPlay(){
+			cur++;
+			if( cur>=len ){ cur = 0 }
+			changePic( cur );
+		}
+		// 定义图片切换函数
+		function changePic( curIndex ){
+			for( var i= 0;i<len;i++ ){
+				imgs[i].className = "unshow";
+				lits[i].className="";
+			}
+			imgs[curIndex].className = "show";
+			lits[curIndex].className = "active";
+			
+		}
+
+	}
+	</script>
+</head>
+<body>
+	<div id="ads">
+        <img src="./images/img1.jpg" alt="" class="show" />
+        <img src="./images/img2.jpg" alt="" />
+        <img src="./images/img3.jpg" alt="" />
+        <img src="./images/img4.jpg" alt="" />
+        <img src="./images/img5.jpg" alt="" />
+        <img src="./images/img6.jpg" alt="" />
+        <ul>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>相册图片可放大查看</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		#wrap{ width: 1000px; height: 630px; margin: 0 auto; }
+		.images li{ box-shadow: 2px 2px 5px #333; margin: 10px 20px; float: left; list-style: none; font-size: 0; border-radius: 5px; }
+		#black{ width: 100%; height: 100%;  position: absolute; top:0; left: 0;background: rgba(000,000,000,0.7); display: none;}
+		#big{ width: 650px; height: 406px; position: absolute; border: 10px solid #fff; display: none;}
+		#img{ width: 100%; height: 100%; }
+		#left,#right{ position: absolute; top: 180px; cursor: pointer; }
+		#left{ left: -60px;  }
+		#right{ right: -60px; }
+	</style>
+	<script>
+	window.onload = function(){
+
+		var wrap = document.getElementById("wrap");
+		var black = document.getElementById("black");
+		var big = document.getElementById("big");
+		var left = document.getElementById("left");
+		var right = document.getElementById("right");
+		var img = document.getElementById("img");
+		var link = wrap.getElementsByTagName("a");
+		var cur = 0;
+
+		for( var i = 0; i<link.length; i++ ){
+
+			link[i].index = i;
+			//点击图片显示大图
+			link[i].onclick = function(){
+
+				var src = this.href;
+
+				cur = this.index;
+
+				black.style.display = "block";
+				big.style.display = "block";
+				big.style.left = big.style.top = "50%";
+				big.style.marginLeft = -big.offsetWidth/2 + "px";
+				big.style.marginTop = -big.offsetHeight/2 + "px";
+				img.src = src;
+				//点击向左按钮
+				left.onclick = function(){
+
+					cur -- ;
+					if( cur<0 ){
+						cur = link.length-1;
+					}
+					img.src = link[cur].href;
+			
+				}
+				//点击向右按钮
+				right.onclick = function(){
+
+					cur ++ ;
+					if( cur>=link.length ){
+						cur = 0;
+					}
+					img.src = link[cur].href;
+			
+				}
+
+				//阻止a默认跳转
+				return false;
+			}
+		}
+		//点击另外的地方大图消失
+		black.onclick = function(){
+
+			black.style.display = "none";
+			big.style.display = "none";
+		}
+
+	}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="images">
+			<ul>
+				<li><a href="images/big1.jpg"><img src="images/s1.jpg" alt="" /></a></li>
+				<li><a href="images/big2.jpg"><img src="images/s2.jpg" alt="" /></a></li>
+				<li><a href="images/big3.jpg"><img src="images/s3.jpg" alt="" /></a></li>
+				<li><a href="images/big4.jpg"><img src="images/s4.jpg" alt="" /></a></li>	
+				<li><a href="images/big5.jpg"><img src="images/s5.jpg" alt="" /></a></li>
+				<li><a href="images/big6.jpg"><img src="images/s6.jpg" alt="" /></a></li>
+				<li><a href="images/big7.jpg"><img src="images/s7.jpg" alt="" /></a></li>
+				<li><a href="images/big8.jpg"><img src="images/s8.jpg" alt="" /></a></li>
+				<li><a href="images/big9.jpg"><img src="images/s9.jpg" alt="" /></a></li>
+			</ul>
+		</div>
+		<div id="black"></div>
+		<div id="big">
+			<img src="images/dirl.png" id="left" />
+			<img src="images/dirr.png" id="right" />
+			<img src="" id="img"/>
+		</div>
+	</div>
+</body>
+</html>

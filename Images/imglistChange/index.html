@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>左右滚动效果</title>
+	<style>
+		*{margin:0px; text-decoration:none; font-family:"Î¢ÈíÑÅºÚ";}
+		.Recommend{width:565px; height:230px; margin:100px auto; position:relative;background:#F9F9F9;
+					padding-top:40px;border:1px dashed #E20076;}
+		#dirl{position:absolute; top:100px; left:0px;}
+		#dirr{position:absolute; top:100px; right:0px;}
+
+		#Scroll{ width:500px; margin:0px auto; height:268px; overflow:hidden; position:relative; }
+		#Scroll dl{ width:150px; text-align:center; float:left; font-size:12px; padding:0px 8px;}
+		#Scroll dl dt{ width:150px; }
+		#Scroll dl dd.title{ line-height:30px; }
+		#Scroll dl dd.title a{ color:#000;}
+		#Scroll dl dd span{ color:#E20076; font-weight:bold;}
+		
+		.scroll_Con{ width:1000%; position:absolute; left:0px; top:0px; transition: 0.5s ease; }
+	</style>
+	<script>
+	window.onload = function(){
+
+		var dirl = document.getElementById("dirl");
+		var dirr = document.getElementById("dirr");
+		var scrollCon = document.getElementById("Scroll").getElementsByTagName("div")[0];
+		var dls = document.getElementsByTagName("dl");
+		var num = dls.length;
+		var len = 0;
+		if( num/3>parseInt( num/3 ) ){
+			len = parseInt( num/3 );
+		}else{
+			len = parseInt( num/3 )-1;
+		}
+		var cur = 0;
+		//向左滚动
+		dirl.onclick = function(){
+
+			cur++;
+			if( cur<=len ){
+				scrollCon.style.left = -cur * 498 + "px";
+			}else{
+				alert("左到头了！");
+				cur = len;
+			}
+		}
+		//向右滚动
+		dirr.onclick = function(){
+
+			cur--;
+			if( cur>=0 ){
+				scrollCon.style.left = -cur * 498 + "px";
+			}else{
+				alert("右到头了！");
+				cur = 0;
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<div class="Recommend">
+		<img src="images/dirl.jpg" id="dirl"/>
+		<img src="images/dirr.jpg" id="dirr"/>
+		<div id="Scroll">
+			<div class="scroll_Con">
+				<dl>
+					<dt><img src="images/rec_img4.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+
+				<dl>
+					<dt><img src="images/rec_img7.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+
+				<dl>
+					<dt><img src="images/rec_img9.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+
+				<dl>
+					<dt><img src="images/rec_img1.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+
+				<dl>
+					<dt><img src="images/rec_img2.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+
+				<dl>
+					<dt><img src="images/rec_img3.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+
+				<dl>
+					<dt><img src="images/rec_img4.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+
+				<dl>
+					<dt><img src="images/rec_img5.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+
+				<dl>
+					<dt><img src="images/rec_img6.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+				<dl>
+					<dt><img src="images/rec_img7.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+
+				<dl>
+					<dt><img src="images/rec_img8.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+				<dl>
+					<dt><img src="images/rec_img9.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+					<dl>
+					<dt><img src="images/rec_img8.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+				<dl>
+					<dt><img src="images/rec_img9.jpg"  width='150' height='150'/></dt>
+					<dd class='title'><a href="">马尔代夫泰姬珊瑚四晚..</a></dd>
+					<dd>抢购价：<span>13760元</span></dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
