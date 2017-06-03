@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>拖放购物车</title>
+<style>
+	*{ margin:0; padding:0;}
+	li{ list-style:none;}
+	li{ float:left; width:200px;; margin:10px;}
+	li img{ width:200px;}
+	p{ height:30px;line-height:30px;text-indent:1em;font-weight:bold; border-bottom:1px #333 dashed;}
+	#div1{ width:600px; border:1px #000 solid; height:300px; clear:both;}
+	.box1{ float:left; width:200px;}
+	.box2{ float:left; width:200px;}
+	.box3{ float:left; width:200px;}
+	#allMoney{ float:right;}
+</style>
+<script>
+window.onload = function(){
+	var aLi = document.getElementsByTagName('li');
+	var oDiv = document.getElementById('div1');
+	
+	var obj = {};
+	var iNum = 0;
+	var allMoney = null;
+	
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].ondragstart = function(ev){
+			
+			var aP = this.getElementsByTagName('p');
+			
+			ev.dataTransfer.setData('title',aP[0].innerHTML);
+			ev.dataTransfer.setData('money',aP[1].innerHTML);
+			
+			ev.dataTransfer.setDragImage(this,0,0);
+			
+		};
+	}
+	
+	oDiv.ondragover = function(ev){
+		ev.preventDefault();
+	};
+	
+	oDiv.ondrop = function(ev){
+		ev.preventDefault();
+		
+		var sTitle = ev.dataTransfer.getData('title');
+		var sMoney = ev.dataTransfer.getData('money');
+		
+		
+		if( !obj[sTitle] ){
+			
+			var oP = document.createElement('p');
+			var oSpan = document.createElement('span');
+			oSpan.className = 'box1';
+			oSpan.innerHTML = 1;
+			oP.appendChild( oSpan );
+			var oSpan = document.createElement('span');
+			oSpan.className = 'box2';
+			oSpan.innerHTML = sTitle;
+			oP.appendChild( oSpan );
+			
+			var oSpan = document.createElement('span');
+			oSpan.className = 'box3';
+			oSpan.innerHTML = sMoney;
+			oP.appendChild( oSpan );
+			
+			oDiv.appendChild( oP );
+			
+			obj[sTitle] = 1;
+			
+		}
+		else{
+			
+			var box1 = document.getElementsByClassName('box1');
+			var box2 = document.getElementsByClassName('box2');
+			
+			for(var i=0;i<box2.length;i++){
+			
+				if(box2[i].innerHTML == sTitle){
+					box1[i].innerHTML = parseInt(box1[i].innerHTML) + 1;
+				}
+			
+			}
+			
+		}
+		
+		if(!allMoney){
+			allMoney = document.createElement('div');
+			allMoney.id = 'allMoney';
+		}
+		
+		iNum += parseInt(sMoney);
+		
+		allMoney.innerHTML = iNum + '￥';
+		
+		oDiv.appendChild( allMoney );
+		
+		
+	};
+	
+};
+
+</script>
+</head>
+<body>
+	<ul>
+        <li draggable="true">
+            <img src="img/img1.jpg" />
+            <p>javascript语言精粹</p>
+            <p>40￥</p>
+        </li>
+        <li draggable="true">
+            <img src="img/img2.jpg" />
+            <p>javascript权威指南</p>
+            <p>120￥</p>
+        </li>
+        <li draggable="true">
+            <img src="img/img3.jpg" />
+            <p>精通javascript</p>
+            <p>35￥</p>
+        </li>
+        <li draggable="true">
+            <img src="img/img4.jpg" />
+            <p>DOM编程艺术</p>
+            <p>45￥</p>
+        </li>
+    </ul>
+    <div id="div1"></div>
+</body>
+</html>
