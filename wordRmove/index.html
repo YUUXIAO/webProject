@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文字搬运工</title>
+<style>
+*{margin:0;padding:0;}
+#box{width:800px;height:300px;padding:10px;border:5px solid #CCC;margin:10px auto;}
+#text{width:300px;height:100%;background:#C63;border-color:1px dashed #C60;float:left;maxlength:280px;font-size:16px;line-height:30px;color:#FFF;}
+#mid{width:120px;float:left;margin:0 20px;text-align:center;}
+#button{width:100px;background:#F60;height:30px;font-size:16px;line-height:30px;color:#FFF;border:0;cursor:pointer;}
+strong{margin-top:10px;display:inline-block;}
+#mid ul{list-style:none;margin-top:30px;margin-left:15px;display:none;}
+#mid ul li{width:12px;height:12px;background:#FC6;float:left;margin-right:5px;}
+#content{float:right;border:1px dashed black;background:#FC6;width:300px;height:100%;font-size:16px;line-height:30px;color:#333;}
+</style>
+<script>
+window.onload=function(){
+	var oMid=document.getElementById("mid");
+	var oStr=oMid.getElementsByTagName("strong")[0];
+	var oUl=oMid.getElementsByTagName("ul")[0];
+	var oLi=oMid.getElementsByTagName("li");
+	var oText=document.getElementById("text");
+	var oCon=document.getElementById("content");
+	var oBut=document.getElementById("button");
+	var timer=null;
+	
+	//点击按钮
+	oBut.onclick=function(){
+		//输入框中没有文字
+		if(oText.value==""){
+			alert('请输入文本信息');
+			return;
+		}
+		//每次清空右边的内容
+		oCon.innerHTML="";
+		
+		this.style.background="#ccc";
+		oUl.style.display="block";
+		//进度条
+		var num=0;
+		function roll(){
+			for(var i=0;i<oLi.length;i++){
+				oLi[i].style.background="";
+			}
+			oLi[num].style.background="#f30";
+			num++;
+			if(num==oLi.length){
+				num=0;
+			}	
+		}
+		setInterval(roll,50)
+		
+		//文字右移
+		timer=setInterval(textMove,50)
+		
+		var sum=oText.value.length;
+		function textMove(){
+			oStr.innerHTML=oCon.innerHTML.length+"/"+sum;
+			if(oText.value==""){
+				clearInterval(timer);
+				oUl.style.display="none";
+				oBut.style.background="";
+				return;
+			}
+			var str=oText.value;
+			var arr=str.split("");
+			oCon.innerHTML+=arr.shift();
+			oText.value=arr.join("");
+			arr.shift();
+		}
+	}
+	
+}
+</script>
+</head>
+<body>
+	<div id="box">
+    	<textarea id="text" cols="20" rows="20"></textarea>
+        <div id="mid">
+        	<input id="button" type="button" value="文字右移"/>
+            <strong>0/0</strong>
+            <ul>
+            	<li></li>
+              	<li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div id="content"></div>	
+    </div>
+</body>
+</html>
