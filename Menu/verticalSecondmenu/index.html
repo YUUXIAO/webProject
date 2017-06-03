@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		#list{ width: 230px; background: #333;margin-left:20px;box-shadow: 1px 1px 1px #666; border: 1px solid #000; }
+		#list .title{ height:70px; background: #333; color: #fff; font-size: 26px; line-height: 70px; text-align: center; }
+		#list li{ list-style: none;line-height: 50px; color: #fff; font-weight: bold; cursor: pointer;border-top: 1px solid #000; }
+		#list li img{ width: 15px; height: 15px; margin-left: 60px; margin-right: 10px; display: inline-block;}
+		#list .con{ width:100%;display: none;}
+		#list .con li{ background: #444; font-size: 15px; height: 40px; line-height: 40px; font-weight: normal;  }
+		#list .con li img{ margin-left: 75px; }
+		.hover{ background: rgb(40,183,120);  }
+	</style>
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script>
+	$(function(){
+
+		$('#list li').click(function(){
+			if($(this).hasClass('hover')){
+				$(this).removeClass('hover')
+			}else{
+				$(this).addClass('hover');
+			}
+			$(this).find('.con').slideToggle('slow');
+			$(this).siblings().removeClass('hover').find('.con').slideUp('quickly');
+		});
+
+		$('.con li').hover(function(){
+			$(this).css('background','#333');
+
+		},function(){
+			$(this).css('background','#444');
+		});
+
+	});
+	</script>
+</head>
+<body>
+	<div id="list">
+		<div class="title"><h2>目 录</h2></div>
+		<ul>
+			<li>
+				<img src="images/text_block.png" alt="" />核 心
+				<div class="con">
+					<ul>
+						<li><img src="images/folder.png" alt="" />网站栏目管理</li>
+						<li><img src="images/folder.png" alt="" />所有档案列表</li>
+						<li><img src="images/html.png" alt="" />等审核的档案</li>
+						<li><img src="images/html.png" alt="" />我发布的文档</li>
+						<li><img src="images/html.png" alt="" />评论管理</li>
+						<li><img src="images/html.png" alt="" />内容回收站</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<img src="images/pen.png" alt="" />模板管理
+				<div class="con">
+					<ul>
+						<li><img src="images/folder.png" alt="" />网站栏目管理</li>
+						<li><img src="images/folder.png" alt="" />所有档案列表</li>
+						<li><img src="images/html.png" alt="" />等审核的档案</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<img src="images/reload.png" alt="" />生 成
+				<div class="con">
+					<ul>
+						<li><img src="images/folder.png" alt="" />网站栏目管理</li>
+						<li><img src="images/folder.png" alt="" />所有档案列表</li>
+						<li><img src="images/html.png" alt="" />等审核的档案</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<img src="images/setting.png" alt="" />栏目文件
+				<div class="con">
+					<ul>
+						<li><img src="images/folder.png" alt="" />网站栏目管理</li>
+						<li><img src="images/folder.png" alt="" />所有档案列表</li>
+						<li><img src="images/html.png" alt="" />等审核的档案</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

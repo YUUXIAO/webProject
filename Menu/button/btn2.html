@@ -1,0 +1,35 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>CSS3实现温柔闪光灯效果</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		.btn{ 
+			width: 250px; height: 50px; 
+			color: #fff;
+			margin: 30px 50px;
+			line-height: 50px; 
+			text-align: center; 
+			font-size: 20px; 
+			border:1px solid #2B92D4; 
+			border-radius: 5px; 
+			box-shadow: 0px 1px 2px rgba(0,0,0,0.3); 
+			background:-webkit-gradient(linear,left top,right bottom,from(#6CC3FE),to(#21A1D0));
+			-webkit-animation:loading 2700ms ease-in-out infinite alternate;
+		}
+
+		@keyframes loading{
+
+			0%{opacity:0.2;box-shadow:0px 1px 2px rgba(0,255,255,0.3);}
+				
+			100%{opacity:1;box-shadow:0px 1px 30px rgba(0,0,255,1);border:1px solid  rgba(0,255,255,1)}
+
+		}
+
+	</style>
+</head>
+<body>
+	<div class="btn">LOADING...</div>
+</body>
+</html>

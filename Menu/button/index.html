@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0; padding:0;}
+		body{background:#333;}
+		.box {
+		  width:800px; height:280px; margin: 50px auto; 
+		}
+		.box .link {
+		  width:205px; height:280px; float: left; margin:0 20px; 
+		}
+		.link .icon {
+		  display:inline-block; width:100%; height:190px; cursor:pointer; background:url(./images/game.png) no-repeat center;
+		  transition:ease-out 0.2s;
+		}
+		.link .icon:hover {
+		  transform:rotate(360deg) scale(1.2);
+		}
+		.button {
+		  display:block; width:180px; height:50px; line-height: 50px; text-decoration: none; color:#2dcb70;
+		  font-family: Arial; font-weight: bolder; border:2px solid rgba(255,255,255,0.6);
+		  padding-left: 20px; margin:0 auto; background: url(images/arrow.png) no-repeat 130px center; background-size: 30px 30px;
+		  box-sizing:border-box;
+		  transition:0.4s ease;
+		  position: relative;
+		}
+		.button:hover {
+		  border:2px solid rgba(255,255,255,1);
+		  background-position: 140px center;
+		}
+		.button .line {
+		  position: absolute; background: none; transition:0.4s;
+		}
+		.button:hover .line {
+		  background: #fff;
+		}
+
+		.button .line-top {
+		  width:0px; height:2px; top:-2px; left:-110%;
+		}
+		.button:hover .line-top {
+		  width:180px; left:-2px;
+		}
+
+		.button .line-right {
+		  width:2px; height:0px; right:-2px; top:-110%;
+		}
+		.button:hover .line-right {
+		  height:50px; top:-2px;
+		}
+
+		.button .line-bottom {
+		  width:0px; height:2px; bottom:-2px; right:-110%;
+		}
+		.button:hover .line-bottom {
+		  width:180px; right:-2px;
+		}
+
+		.button .line-left {
+		  width:2px; height:0px; left:-2px; bottom:-110%;
+		}
+		.button:hover .line-left {
+		  height:50px; bottom:-2px;
+		}
+		.tip {
+		  position: absolute; padding: 0 14px; height:35px; line-height: 35px; background: #2dcb70;
+		  color:#fff; font-size: 18px; margin: 0 auto; border-radius: 3px; top:100px; opacity:0;
+		}
+		.tip em {
+		  font-style: normal; font-size: 18px; color:#fff;
+		}
+		.tip span {
+		  display: block; width:0; height:0; overflow: hidden; position: absolute; top:35px; left:50%;
+		  border:7px solid transparent; border-top-color:#2dcb70; margin-left: -3px;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script>
+		$(function(){
+		    $('.link .button').hover(function(){
+		        var title = $(this).attr('data');
+		        $('.tip em').text(title);
+		        var pos = $(this).offset().left;
+		        var dis = parseInt($('.tip').outerWidth()-$(this).outerWidth())/2;
+		        var l = pos - dis; 
+		        $('.tip').css({'left':l+'px'}).animate({'top':180,'opacity':1},300);
+		    },function(){
+		        if(!$('.tip').is(':animated')){
+		            $('.tip').animate({'top':160,'opacity':0},50);
+		        }
+		    })
+		});
+	</script>
+</head>
+<body>
+	<div class="box">
+    <div class="link">
+        <span class="icon"></span>
+        <a href="#" class="button" data="My mission is clear">
+            <span class="line line-top"></span>
+            <span class="line line-right"></span>
+            <span class="line line-bottom"></span>
+            <span class="line line-left"></span>
+            MISSION
+        </a>
+    </div>
+    <div class="link">
+        <span class="icon"></span>
+        <a href="#" class="button" data="This is my playGroup">
+            <span class="line line-top"></span>
+            <span class="line line-right"></span>
+            <span class="line line-bottom"></span>
+            <span class="line line-left"></span>
+            PLAY
+        </a>
+    </div>
+    <div class="link">
+        <span class="icon"></span>
+        <a href="#" class="button" data="This is my Touch">
+            <span class="line line-top"></span>
+            <span class="line line-right"></span>
+            <span class="line line-bottom"></span>
+            <span class="line line-left"></span>
+            TOUCH
+        </a>
+    </div>
+    <div class="tip">
+        <em></em><span></span>
+    </div>
+</div>
+</body>
+</html>

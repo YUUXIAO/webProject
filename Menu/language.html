@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>中英文切换导航条</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		.nav{ list-style: none; width: 1100px; margin: 20px auto; border-top: 2px solid #333; }
+		.nav li{ float: left; width: 150px; height: 50px; line-height: 50px; overflow: hidden; position: relative; text-align: center; border-right: 1px solid #f2f2f2; cursor: pointer; margin-right: 5px; transform: skew(-30deg); }
+		.nav li span{ transform: skew( 30deg); display: block; }
+		.nav li:last-child{ border-right: none; }
+		.nav li:hover .info{ top: 0; }
+
+		.text,.info{ width: 100%; height: 100%; }
+		.text{ font-size: 16px; text-decoration: none; color: #333; display: inline-block; background: #f2f2f2; }
+		.info{ background: #666; color: #fff; position: absolute; top: 50px; left: 0; transition: all 0.5s ease; }
+	</style>
+</head>
+<body>
+	<ul class="nav">
+		<li>
+			<a href="#" class="text"><span>首页</span></a>
+			<div class="info"><span>Home</span></div>
+		</li>
+		<li>
+			<a href="#" class="text"><span>产品展示</span></a>
+			<div class="info"><span>Products</span></div>
+		</li>
+		<li>
+			<a href="#" class="text"><span>精品案例</span></a>
+			<div class="info"><span>Case</span></div>
+		</li>
+		<li>
+			<a href="#" class="text"><span>常见问题</span></a>
+			<div class="info"><span>Faq</span></div>
+		</li>
+		<li>
+			<a href="#" class="text"><span>新闻中心</span></a>
+			<div class="info"><span>News</span></div>
+		</li>
+		<li>
+			<a href="#" class="text"><span>关于我们</span></a>
+			<div class="info"><span>About us</span></div>
+		</li>
+		<li>
+			<a href="#" class="text"><span>联系我们</span></a>
+			<div class="info"><span>Conact us</span></div>
+		</li>
+	</ul>
+</body>
+</html>

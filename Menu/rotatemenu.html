@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>menu</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		body{ background: #666; }
+		.menu{ width: 1057px; margin: 50px auto; border-radius: 5px; box-shadow: 0 0 10px #aaa; }
+		.menu li{ list-style: none; width: 150px; background: -webkit-linear-gradient(rgba(41, 41, 41, 0.75) 0%, rgba(54, 54, 54, 0.72) 50%, rgba(24, 23, 23, 0.94) 51%); float: left; text-align: center; height: 40px; line-height: 40px; border-right: 1px solid #000; position: relative; }
+		.menu li:last-child{ border-right: none; }
+		.menu li:hover{ background: #222; }
+		.menu li:hover ul{ display: block; animation: animate 0.5s ease; }
+		.menu li a{ text-decoration: none; color: #f2f2f2; }
+
+		.menu li ul{ display: none; position: absolute; left: 0; top: 40px; }
+		.menu li ul li{ background: rgba( 22,22,22,0.5 ); border: none; border-top: 1px solid #aaa; }
+
+		@keyframes animate{
+			from{ opacity: 0; transform: rotate( 0deg ); }
+			to{ opacity: 1; transform: rotate( -360deg ); }
+		}
+	</style>
+</head>
+<body>
+	<div class="menu">
+		<ul>
+			<li>
+				<a href="#">前端设计</a>
+				<ul>
+					<li><a href="#">HTML</a></li>
+					<li><a href="#">CSS</a></li>
+					<li><a href="#">javascript</a></li>
+				</ul>
+			</li>
+			<li><a href="#">网页设计</a></li>
+			<li><a href="#">动画设计</a></li>
+			<li>
+				<a href="#">编程语言</a>
+				<ul>
+					<li><a href="#">PHP</a></li>
+					<li><a href="#">JAVA</a></li>
+					<li><a href="#">wordpress</a></li>
+					<li><a href="#">CodeIgnite</a></li>
+				</ul>
+			</li>
+			<li><a href="#">手机开发</a></li>
+			<li><a href="#">开源程序</a></li>
+			<li><a href="#">我的博客</a></li>
+		</ul>
+	</div>
+</body>
+</html>

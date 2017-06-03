@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>回到顶部</title>
+	<style>
+		a{ text-decoration: none; }
+		#btn { width:40px; height:40px; position:fixed; background: #aaa; color: #fff; right:25px; bottom:10px; display:none;text-align: center; line-height: 40px; }
+		#btn:hover { background: #999; }
+	</style>
+	<script>
+		window.onload = function(){
+
+			var btn = document.getElementById("btn");
+			var clientHeight = document.documentElement.clientHeight;  //获取可视区域的高度
+			var timer = null;  	//定义一个定时器
+			var isTop = true; 	//定义一个布尔值，用于判断是否到达顶部
+
+			window.onscroll = function(){
+				//获取滚动条的滚动高度
+				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+				//如果滚动高度大于可视区域高度，则显示回到顶部按钮否则隐藏
+				btn.style.display = scrollTop >= clientHeight ?  "block" : "none";
+
+				//判断当点击回到顶部按钮后滚动条在回滚过程中，若手动滚动滚动条，则清除定时器
+		        if(!isTop){
+		            clearInterval(timer);
+		        }
+		        isTop = false;
+
+			}
+			//回到顶部按钮点击事件
+			btn.onclick = function(){
+
+				timer = setInterval( function(){
+
+					//获取滚动条的滚动高度
+            		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+            		//用于设置速度差，产生缓动的效果
+           			var speed = Math.floor(-scrollTop / 6);
+            		document.documentElement.scrollTop = document.body.scrollTop = scrollTop + speed;
+            		isTop =true;  //用于阻止滚动事件清除定时器
+
+            		if(scrollTop == 0){
+                		clearInterval(timer);
+            		}
+
+				},50 );
+			}
+
+		}
+	</script>
+</head>
+<body style="height: 2000px;">
+	<a href="javascript:;" id="btn" title="回到顶部">Top</a>
+</body>
+</html>

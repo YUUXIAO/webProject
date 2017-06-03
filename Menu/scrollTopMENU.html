@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>滚动页面显示悬浮导航</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		header{ height: 200px; background: #f2f2f2; font-weight: bold; text-align: center; line-height: 200px; }
+
+		#nav{ width: 100%; height: 50px; background: #333; }
+		#nav ul{ width: 900px; margin: 0 auto; }
+		#nav li{ list-style: none;  float: left; }
+		#nav li a{ font-size: 16px; height: 50px; color: #fff; padding: 0 30px; line-height: 50px; text-decoration: none; display: inline-block; }
+		#nav li a:hover{ background: #666; }
+
+		#cloths{ height: 600px; background: #bbb; font-weight: bold; text-align: center; line-height: 400px; }
+		#shoes{ height: 600px; background: #aaa; font-weight: bold; text-align: center; line-height: 400px; }
+		#toys{ height: 600px; background: #999; font-weight: bold; text-align: center; line-height: 400px; }
+
+		.fixed{ position: fixed; top: 0; left: 0; animation-name: show; animation-duration: 0.5s; }
+
+		@keyframes show{
+			from{ top: -50px; }
+			to{ top: 0; }
+		}
+
+	</style>
+	<script>
+		window.onload = function(){
+
+			var nav = document.getElementById("nav");
+			var shoes = document.getElementById("shoes");
+			
+			scrollMenu( nav,shoes );
+
+		}
+
+		function scrollMenu( obj,target ){
+
+			window.onscroll = function(){
+
+				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				var top = target.offsetTop;
+				//当滚动高度大于目标元素的位置，导航条显示
+				if( scrollTop>=top ){
+					obj.className = "fixed";
+				}else{
+					obj.className = "";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<header><h1>header</h1></header>
+	<div id="nav">
+		<ul>
+			<li><a href="#">首页</a></li>
+			<li><a href="#">秒杀</a></li>
+			<li><a href="#">女装馆</a></li>
+			<li><a href="#">内衣馆</a></li>
+			<li><a href="#">美妆馆</a></li>
+			<li><a href="#">品牌特卖</a></li>
+			<li><a href="#">团购频道</a></li>
+			<li><a href="#">每周上新</a></li>
+		</ul>
+	</div>
+	<div id="cloths"><h1>cloths</h1></div>
+	<div id="shoes"><h1>shoes</h1></div>
+	<div id="toys"><h1>toys</h1></div>
+
+</body>
+</html>
