@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>简易选项卡</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		#box{ width: 300px; border: 1px solid #000; margin: 10px auto; }
+		#tab{ width: 100%; display: block; overflow: hidden; background: #333; }
+		#tab li{ float: left; list-style: none; height: 30px; line-height: 30px;  }
+		#tab li a{ text-decoration: none; padding: 0 25px;  color: #fff; }
+		#tab li.sec{ background: #ddd; }
+		#tab li.sec a{ color: #333; }
+		#text{ width: 100%; height: 200px; background: #f2f2f2; text-align: center; }
+		#text>div{ display: none; line-height: 150px; }
+		#text>div.cur{ display: block; }
+	</style>
+	<script>
+	window.onload = function(){
+		var tab = document.getElementById("tab");
+		var lis = tab.getElementsByTagName("li");
+		var text = document.getElementById("text");
+		var con = text.getElementsByTagName("div");
+
+		for (var i = 0; i< lis.length; i++) {
+			lis[i].index = i;
+			lis[i].onclick = function(){
+				for( var i=0; i<lis.length; i++ ){
+					lis[i].className = "";
+					con[i].className = "";
+				}
+				this.className = "sec";
+				con[this.index].className = "cur";
+			}
+ 		};
+	}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<ul id="tab">
+			<li class="sec"><a href="#">新闻</a></li>
+			<li><a href="#">音乐</a></li>
+			<li><a href="#">视频</a></li>
+		</ul>
+		<div id="text">
+			<div class="cur"><h1>新闻内容</h1></div>
+			<div><h1>音乐内容</h1></div>
+			<div><h1>视频内容</h1></div>
+		</div>
+	</div>
+</body>
+</html>
