@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图标移动</title>
+<style>
+	*{margin:0;padding:0;}
+	#box{width:120px;height:120px;text-align:center;line-height:120px;border:1px solid #fff;border-radius:5px;position:absolute;}
+	span{color:#fff;font-size:16px;line-height:100px;font-weight:bolder;cursor:pointer;display:block;background:black;width:100px;height:100px;border-radius:50px;position:absolute;top:10px;left:10px;}
+</style>
+<script>
+window.onload=function(){
+	var box=document.getElementById("box");
+	var span=box.getElementsByTagName("span")[0];
+	//按下按键图标“可移动”
+	span.onmousedown=function(){
+
+		box.style.background = "#ccc";
+		box.style.borderColor = "#666";
+
+		//按住按键移动“图标”
+		document.onmousemove = function(ev){
+		
+			var ev = ev||event;
+			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+			var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+			
+			box.style.left = ev.clientX+scrollLeft-50+"px";
+			box.style.top = ev.clientY+scrollTop-50+"px";
+			
+		}
+		//松开按键图标“固定”
+		span.onmouseup = function(){
+			box.style.background="";
+			box.style.borderColor="#fff";
+			
+			document.onmousemove=document.onmouseup=null;	
+		}
+				
+	}
+}
+</script>
+</head>
+<body>
+	<div id="box">
+    	<span>图标移动</span>
+    </div>
+</body>
+</html>
