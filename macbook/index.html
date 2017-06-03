@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>macbook</title>
+<style>
+	.board{
+		margin:0 auto;
+		padding:0 auto;
+		width:600px;
+		height:450px;
+		margin-top:50px;
+		background:rgb(210,210,210);
+		border-radius:20px;
+		position:relative;
+		box-shadow:0px 5px 6px rgb(160,160,160);
+		background:-webkit-linear-gradient(60deg,rgba(250,250,250,1) 25%,rgba(210,210,210,1));
+	}
+	.board:before{
+		content:'';
+		display:block;
+		width:780px;
+		height:20px;
+		background:rgb(210,210,210);
+		border-radius:0 0 3px 3px;
+		border-top-left-radius:390px 18px;
+		border-top-right-radius:390px 18px;
+		position:absolute;
+		left:-90px;top:-20px;
+		border-bottom:2px solid rgb(0,0,0);
+		background:-webkit-linear-gradient(top,rgb(210,210,210) 50%,rgb(225,225,225));
+	}
+	.blackbar{
+		width:450px;height:18px;
+		position:absolute;
+		left:75px;
+		border-radius:2px;
+		border-bottom:2px solid #fff;
+		border-right:2px solid #fff;
+		background:-webkit-linear-gradient(top,rgb(30,30,30),rgb(60,60,60) 35%,rgb(100,100,100) 50%,rgb(30,30,30) 65%);
+		background:-linear-gradient(top,rgb(30,30,30),rgb(60,60,60) 35%,rgb(100,100,100) 50%,rgb(30,30,30) 65%);
+	}
+	.keyboard{
+		position:absolute;
+		width:530px;
+		height:216px;
+		left:35px;
+		top:35px;
+		border:1px solid rgb(180,180,180);
+		border-radius:8px;
+		background:rgba(250,250,250,1);
+		box-shadow:2px 0px 2px rgb(180,180,180) inset,0px 3px 3px rgb(180,180,180) inset,-5px -0px 1px rgb(255,255,255) inset,0px -3x 3px rgb(180,180,180) inset;
+	}
+	ul,li{
+		list-style:none;
+		margin:0 auto;
+		padding:0 auto;
+		display:block;
+		-webkit-user-select:none;
+		-moz-user-select:none;
+		-ms-user-select:none;
+		user-select:none;
+	}
+	.keyboard ul{
+		wiidth:530px;
+		margin-top:8px;
+		padding-left:8px;		
+	}
+	.keyboard ul li{
+		width:29px;height:29px;
+		float:left;
+		margin-right:5px;
+		margin-bottom:5px;
+		background-color:rgb(30,30,30);	
+		color:rgb(200,200,200);
+		text-align:center;
+		line-height:28px;
+		font-size:12px;
+		border-radius:4px;
+		border:1px solid rgb(70,70,70);
+		box-shadow:1px 0px 0px rgb(0,0,0),0px 1px 0px rgb(0,0,0),-1px 0px 0px rgb(0,0,0),0px -1px 0px rgb(0,0,0);
+	}
+	li:nth-child(-n+14):nth-child(n+1){
+		width:30px;
+		height:15px;
+		line-height:15px;
+	}
+	li:nth-child(-n+27):nth-child(n+16) span,li:nth-child(40) span,li:nth-child(41) span,li:nth-child(42) span,li:nth-child(53) span,li:nth-child(54) span,li:nth-child(-n+66):nth-child(n+64) span{
+		display:block;
+		margin-top:5px;
+		line-height:0.5;
+	}
+	.keyboard ul li:nth-child(28),.keyboard ul li:nth-child(29){
+		width:45px;
+	}
+	.keyboard ul li:nth-child(43),.keyboard ul li:nth-child(55){
+		width:55px;
+	}
+	.keyboard ul li:nth-child(56),.keyboard ul li:nth-child(67){
+		width:73px;
+	}
+	li:nth-child(-n+74),li:nth-child(n+68){
+		width:33px;
+	}
+	.keyboard ul li:nth-child(72){
+		width:173px;
+	}
+	.keyboard ul li:nth-child(71),.keyboard ul li:nth-child(73){
+		width:37px;
+	}
+	.keyboard ul li:nth-child(75),.keyboard ul li:nth-child(77),.keyboard ul li:nth-child(78){
+		margin-top:18px;
+		height:14px;
+	}
+	.keyboard ul li:nth-child(76){
+		height:13px; 
+		margin-top:19px;
+	}
+	.keyboard ul li:nth-child(78){
+		position:absolute;
+		bottom:22px;
+		right:38px;
+	}
+	.touch{
+		position:absolute;
+		width:200px;
+		height:150px;
+		border:2px solid rgb(190,190,190);
+		bottom:23px;
+		left:200px;
+		border-radius:8px;
+	}
+</style>
+</head>
+<body>
+	<div class="board">
+    
+        <div class="blackbar"></div>
+        
+        <div class="keyboard">
+            <ul>
+            	<li>esc</li>
+                <li>F1</li>
+                <li>F2</li>
+                <li>F3</li>
+                <li>F4</li>
+                <li>F5</li>
+                <li>F6</li>
+                <li>F7</li>
+                <li>F8</li>
+                <li>F9</li>
+                <li>F10</li>
+                <li>F11</li>
+                <li>F12</li>
+                <li></li>
+                <li></li>
+                <li><span>!</span><span>1</span></li>
+                <li><span>@</span><span>2</span></li>
+                <li><span>#</span><span>3</span></li>
+                <li><span>$</span><span>4</span></li>
+                <li><span>%</span><span>5</span></li>
+                <li><span>^</span><span>6</span></li>
+                <li><span>&</span><span>7</span></li>
+                <li><span>*</span><span>8</span></li>
+                <li><span>(</span><span>9</span></li>
+                <li><span>)</span><span>0</span></li>
+                <li><span>-</span><span>-</span></li>
+                <li><span>+</span><span>=</span></li>
+                <li></li>
+                <li></li>
+                <li>Q</li>
+                <li>W</li>
+                <li>E</li>
+                <li>R</li>
+                <li>T</li>
+                <li>Y</li>
+                <li>U</li>
+                <li>I</li>
+                <li>O</li>
+                <li>P</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>A</li>
+                <li>S</li>
+                <li>D</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+                <li>J</li>
+                <li>K</li>
+                <li>L</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>Z</li>
+                <li>X</li>
+                <li>C</li>
+                <li>V</li>
+                <li>B</li>
+                <li>N</li>
+                <li>M</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+				<li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+				<li>By Pure CSS</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+				<li></li>
+                <li></li>
+            </ul>
+        </div>
+        
+        <div class="touch"></div>
+    
+    </div>
+</body>
+</html>
