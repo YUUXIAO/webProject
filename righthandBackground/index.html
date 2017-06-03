@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		body{ background: url( images/1.jpg ) no-repeat 0 0; }
+		#menu{  display: none; position: absolute; }
+		#menu ul{ list-style: none; box-shadow: 1px 1px 2px #fff; width: 100px; background: #fff; }
+		#menu ul li{ width: 100px; height: 30px; line-height: 30px; color: #777; border-bottom: 1px solid #efefef; text-indent: 2em; font-size: 14px;  }
+		#menu ul li:hover{ color: #333; font-weight: bolder; cursor: pointer; }
+		#menu ul li:nth-child(1){ background: url( images/ico1.jpg ) no-repeat 5px center; }
+		#menu ul li:nth-child(2){ background: url( images/ico2.jpg ) no-repeat 5px center; }
+		#menu ul li:nth-child(3){ background: url( images/ico3.jpg ) no-repeat 5px center; }
+		#menu ul li:nth-child(4){ background: url( images/ico4.jpg ) no-repeat 5px center; }
+		#menu ul li:nth-child(5){ background: url( images/ico5.jpg ) no-repeat 5px center; }
+		#menu ul li:nth-child(6){ background: url( images/ico6.jpg ) no-repeat 5px center; }
+		#menu ul li:nth-child(7){ background: url( images/ico7.jpg ) no-repeat 5px center; }
+
+		#list{ position: relative; width: 650px; height: 330px; cursor: pointer; padding:50px 10px 10px ; display: none; background: rgba(000,000,000,0.4); box-sizing: border-box; left: 50%; top: 50%; margin-left: -325px; margin-top: 130px;  }
+		#list .images{ height: 50px; width: 100%; position: absolute; top:0; left: 0; line-height: 50px; text-indent: 15px;background: #333; color: #fff; }
+		#close{ right:10px; position: absolute; top: 11px; }
+		#list ul{ list-style: none;opacity: 1; margin: 5px auto; }
+		#list ul li{ padding: 2px; float: left; margin-left: 4px; }
+	</style>
+	<script>
+	window.onload = function(){
+
+		var menu = document.getElementById("menu");
+		var lis = menu.getElementsByTagName("li");
+		var list = document.getElementById("list");
+		var lits = list.getElementsByTagName("li");
+		var imgs = list.getElementsByTagName("img");
+		var close = document.getElementById("close");
+
+		document.oncontextmenu = function( ev ){
+
+			var ev = ev || event;
+			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+			menu.style.display = "block";
+			menu.style.left = ev.clientX + "px";
+			menu.style.top = ev.clientY + scrollTop + "px";
+
+			//点击更换背景
+			lis[5].onclick = function(){
+
+				menu.style.display = "none";
+				list.style.display = "block";
+				
+			}
+			//点击图片将整体背景改变
+			for( var i =0; i<lits.length; i++ ){
+				lits[i].index = i;
+
+				lits[i].onclick = function(){
+					var src = imgs[this.index+1].src;
+					var bImg = src.replace("s_","")
+					document.body.style.background = "url("+ bImg +")";
+
+				}
+			}
+			//点击关闭按钮关闭
+			close.onclick = function(){
+				list.style.display = "none";
+			}
+			
+			return false;
+		}
+
+	}
+	</script>
+</head>
+<body>
+	<div id="menu">
+		<ul>
+			<li>添加应用</li>
+			<li>获取课程</li>
+			<li>添加笔记</li>
+			<li>上传资料</li>
+			<li>刷新</li>
+			<li>更换背景</li>
+			<li>注销</li>
+		</ul>
+	</div>
+	<div id="list">
+		<div class="images"><h3>桌面背景墙</h3><img src="images/close.png" alt="" id="close"/></div>
+		<ul>
+			<li><img src="images/s_1.jpg" alt="" /></li>
+			<li><img src="images/s_2.jpg" alt="" /></li>
+			<li><img src="images/s_3.jpg" alt="" /></li>
+			<li><img src="images/s_4.jpg" alt="" /></li>
+			<li><img src="images/s_5.jpg" alt="" /></li>
+			<li><img src="images/s_6.jpg" alt="" /></li>
+		</ul>
+	</div>
+</body>
+</html>
