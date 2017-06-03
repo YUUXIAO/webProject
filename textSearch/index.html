@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>查找和替换</title>
+<style>
+	*{margin:0;padding:0;}
+	#box{width:600px;height:600px;background:#CCC;position:absolute;padding:50px 100px;}
+	p{width:70%;height:300px;background:#FFF;font-size:14px;line-height:25px;float:left;padding:30px;}
+	ul{list-style:none;}
+	li{float:left;width:50px;height:30px;font-size:16px;line-height:30px;text-align:center;cursor:pointer;border-radius:3px;}
+	#list{list-style:none;float:right;font-size:16px;line-height:30px;height:30px;width:50px;color:#333;}
+	#list li{background:#999;}
+	#lis{display:none;}
+	#lis li{background:#aaa;}
+	#list ul li:hover{background:#F60;color:#fff;}
+	#tab{float:left;border:15px solid #666;padding:5px 10px;width:400px;height:100px;margin-top:10px;}
+	hr{background-color:#F60;height:2px;clear:both;}
+	#tab{display:none;}
+	#tab ul .selected{background:#F60;color:#fff;}
+	.selected{display:block;}
+	#search,#replace{display:none;}
+	span{background:yellow;}
+</style>
+<script>
+	window.onload=function(){
+		var oList=document.getElementById("list").getElementsByTagName("li")[0];
+		var oLis=document.getElementById("lis");
+		var li=oLis.getElementsByTagName("li");
+		var oTab=document.getElementById("tab");
+		var lis=oTab.getElementsByTagName("li");
+		var oDiv=oTab.getElementsByTagName("div");
+		var oInp=oDiv[0].getElementsByTagName("input");
+		var aInp=oDiv[1].getElementsByTagName("input");
+		var oP=document.getElementsByTagName("p")[0];
+		
+		oList.onclick=function(){
+			oLis.style.display="block";
+		}
+		
+		for(var i=0;i<li.length;i++){
+			change(li);
+			change(lis);
+		}
+		
+		//查找内容;
+		var text=oP.innerHTML;
+		oInp[1].onclick=function(){
+			var str=oInp[0].value;
+			//判断
+			if(oP.innerHTML.indexOf(str)==-1){
+				alert("未找到您要找的文字！");
+			}else if(str==""){
+				alert("请输入文字！")
+			}
+			oP.innerHTML=text;
+			oP.innerHTML=oP.innerHTML.split(str).join("<span>"+str+"</span>");
+		}
+		//替换内容；
+		aInp[2].onclick=function(){
+			var str=aInp[0].value;
+			var newStr=aInp[1].value;
+			//判断
+			if(oP.innerHTML.indexOf(str)==-1){
+				alert("未找到您要找的文字！");
+			}else if(str==""){
+				alert("请输入文字！");
+				return;
+			}
+			oP.innerHTML=text;
+			oP.innerHTML=oP.innerHTML.split(str).join("<span>"+newStr+"</span>");
+		}
+		
+		//切换选项卡
+		function change(obj){
+			obj[i].index=i;
+			obj[i].onclick=function(){
+				oP.innerHTML=text;
+				oTab.style.display="block";
+				for(var j=0;j<lis.length;j++){
+					lis[j].className="";
+					oDiv[j].style.display="none";
+				}
+				lis[this.index].className="selected";
+				oDiv[this.index].style.display="block";
+			}
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<div id="box">
+    	<p>
+        	1969年1月，我到文安驿公社接北京知青。就是在这个时候，我第一次见到了近平。当时，梁家河派了十几个年轻力壮的社员去接知青。怕人手不够，我们还牵了毛驴，帮着驮行李。知青们的行李有铺盖卷，有箱子，我们轮流帮着拿行李，你拿一气儿，我拿一气儿，几十个人，浩浩荡荡地就回到村里来了。我记得很清楚，当时梁家河村一共来了十五名北京知青，十一名男知青，四名女知青。当时梁家河村委会接待室是一队的地方，分来五名男知青，四名女知青；近平和其余五名男知青在后面的二队。村里当时安排我父亲给二队的知青做饭。
+        </p>
+        <ul id="list">
+        	<li>展开
+            	<ul id="lis">
+                	<li>查找</li>
+           			<li>替换</li>	
+                </ul>
+            </li>
+        </ul>
+        <div id="tab">
+        	<ul>
+            	<li>查找</li>
+                <li>替换</li>
+            </ul>
+            <hr />
+            <div id="search">
+            	<input type="text" />
+            	<input type="button" value="查找"/>
+            </div>
+            <div id="replace">
+            	<input type="text" />
+                <input type="text" />
+            	<input type="button" value="替换"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
