@@ -1,0 +1,137 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+		ul,p{margin:0;padding:0;}
+		.list{ 
+			width:920px; height:450px; 
+			margin:50px auto; 
+		}
+		.list li{ 
+			width:205px; height:155px; 
+			border: 1px solid #fff;
+			list-style:none; 
+			float:left; 
+			margin:10px; 
+			position:relative;
+		}
+		.list li img{
+			position: absolute;
+			z-index: 1;
+		}
+		.list li i{
+			width: 20px; height: 20px;
+			background: url(images/edit.png);
+			position: absolute;
+			z-index: 2;
+			top: 5px;
+			display: none;
+		}
+		.list li i.edit{left:5px;}
+		.list li i.edit:hover{background-position:0 -30px;}
+		.list li i.del{background-position:0 -60px;right:5px}
+		.list li i.del:hover{background-position:0 -90px;}
+		.list li p{
+			background:#ccc;
+			height:25px;line-height:25px;
+			text-indent:5px;
+			position:absolute;
+			bottom:0;
+			width:100%;
+		}
+		.list li a{
+			color:#000;
+			font-size:14px;
+			text-decoration:none;
+		}
+		.list li:hover{
+			border:1px solid #66ccff;
+			border-radius:5px;
+			box-shadow:0px 0px 10px #c2c2c2;
+		}
+		.list li:hover i{display:inline-block;}
+	</style>
+	<script>
+		function chk( flag ){
+			var i;
+			for(i=1;i<=8;i++){
+				if(i==flag){
+					document.getElementById("b"+i).style.display="none";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul class="list">
+		<li id="b1">
+			<a href="#">
+				<img src="images/baidu.png" width="205" height="130" alt="百度"/>
+				<p>百度</p>
+				<i class="edit"></i>
+				<i class="del" onclick="chk(1)"></i>
+			</a>
+		</li>
+		<li id="b2">
+			<a href="#">
+				<img src="images/1hd.jpg" width="205" height="130" alt="百度" title="百度" />
+		    	<i class="edit"></i>
+		    	<i class="del" onclick="chk(2)"></i>
+		  		<p>一号店</p>
+		  	</a>
+		</li>
+		<li id="b3">
+			<a href="#">
+				<img src="images/jd.jpg" width="205" height="130" alt="百度" title="百度" />
+		  		<i class="edit"></i>
+		  		<i class="del" onclick="chk(3)"></i>
+		  		<p>京东商城</p>
+		  	</a>
+		</li>
+		  
+		<li id="b4">
+			<a href="#">
+				<img src="images/sina.jpg" width="205" height="130" alt="百度" title="百度" />
+		  		<i class="edit"></i>
+		  		<i class="del" onclick="chk(4)"></i>
+		  		<p>新浪</p>
+		  	</a>
+		</li>
+		<li id="b5">
+			<a href="#">
+				<img src="images/taobao.jpg" width="205" height="130" alt="百度" title="百度" />
+		  		<i class="edit"></i>
+		  		<i class="del" onclick="chk(5)"></i>
+		  		<p>淘宝网</p>
+		  	</a>
+		</li>
+		<li id="b6">
+			<a href="#">
+				<img src="images/youku.jpg" width="205" height="130" alt="百度" title="百度" />
+		  		<i class="edit"></i>
+		  		<i class="del" onclick="chk(6)"></i>
+		  	<p>优酷</p>
+		  	</a>
+		</li>
+		<li id="b7">
+			<a href="#">
+				<img src="images/amazon.jpg" width="205" height="130" alt="百度" title="百度" />
+		  		<i class="edit"></i>
+		  		<i class="del" onclick="chk(7)"></i>
+		  		<p>亚马逊</p>
+		  	</a>
+		</li>
+		<li id="b8">
+			<a href="#">
+				<img src="images/xiaomi.jpg" width="205" height="130" alt="百度" title="百度" />
+		  		<i class="edit"></i>
+		  		<i class="del" onclick="chk(8)"></i>
+		  		<p>小米</p>
+		  	</a>
+		</li>
+	</ul>
+
+</body>
+</html>
