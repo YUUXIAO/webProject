@@ -1,0 +1,478 @@
+body{
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+a:hover{
+	text-decoration: none;
+}
+/* 导航条 */
+#header{ 
+	background: #fff; 
+	border:none;
+	box-shadow: 0px 2px 8px 0px rgba(50,50,50,0.25);
+}
+#header .navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+    color: #207a16;
+    height: 70px;
+    line-height: 35px;
+}
+#navbar .navbar-nav>li>a {
+    font-size: 16px;
+    color: #666;
+    height: 70px;
+  	line-height: 35px;
+}
+#navbar .nav>li.active>a{
+	color: #207a16;
+	padding-top: 13px;
+	font-weight: bold;
+	border-radius: 3%;
+	background-color: #f2f2f2;
+	border-top: 2px solid green;
+}
+/* 小屏幕折叠按钮 */
+#header .navbar-toggle{
+    margin-top: 17px;
+}
+#header .navbar-toggle:hover {
+    background-color: #207a16;
+}
+#header .navbar-toggle:hover .icon-bar {
+    background-color: #fff;
+}
+#header .navbar-toggle .icon-bar {
+    background-color: #207a16;
+}
+/* 导航条结束 */
+
+/* 轮播图 */
+#carousel{
+	margin-top: 70px;
+	padding: 0;
+}
+#carousel .item{
+	height:570px;
+}
+#carousel .item img{ 
+	width: 100%; 
+	height: 100%;
+}
+#carousel .carousel-caption h1{
+	font-size: 60px;
+	color: green;
+	font-weight: bold;
+	margin-bottom: 50px;
+}
+/* 轮播图结束 */
+
+/* 咖啡机 */
+#machine{
+	padding: 0;
+	height: 470px;
+	position: relative;
+	z-index: 100;
+}
+.changeImg{
+	padding: 0;
+	height: 100%;
+	overflow: hidden;
+	position: relative;	
+}
+.changeImg .dir{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	font-size: 20px;
+	line-height: 28px;
+	text-align: center;
+	background: #fff;
+	color: #63a25c;
+	bottom:0;
+	left: 0;
+}
+.changeImg .dirr{
+	left: 30px;
+}
+.changeImg .checked{ background: #63a25c; color: #fff; }
+.machineImg{
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.machineImg ul{
+	width: 300%;
+	height: 100%;
+	background: #fff;
+}
+.machineImg li{
+	width: 33%;
+	height: 100%;
+	float: left;
+}
+.machineImg li img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.machineText{
+	height: 100%;
+	text-align: center;
+	color: #6ca764;
+	padding-top: 40%;
+	background: rgb(40,126,32) url("../images/coffee2.png") no-repeat center 32%;
+	background-size: 50px 50px;
+}
+.machineText p{
+	color: #fff;
+	font-size: 25px;
+	margin: 0 0 8px;
+}
+.machineText .col-md-12:nth-of-type(2){
+	padding-bottom: 10%;
+}
+/* 咖啡机器结束 */
+
+/* 咖啡图片 */
+#coffeeImg{
+	color: #fff;
+	text-align: center;
+	margin-top: -10%;
+	padding: 0;
+	background: url("../images/bean.jpg") no-repeat center center;
+	background-size: 100% 100%;
+}
+#coffeeImg .imgBg{
+	width: 100%;
+	height: 100%;
+	padding: 120px 0 30px 0;
+	background: rgba(0,0,0,0.8);
+}
+#coffeeImg .imgBg .col-sm-2{
+	height: 3px;
+	margin: 15px 0;
+	background: #fff;
+	margin-left: 50%; 
+	transform: translateX(-50%);
+}
+#coffeeImg .imgBg p{
+	color: rgb(129,128,124);
+}
+/* 咖啡图片结束 */ 
+
+/* LIST */
+#productList{
+	padding: 10% 0 20% 0;
+}
+#productList dl dd{
+	font-size: 12px;
+	text-align: center;
+}
+/* LIST结束 */
+
+/* HOT */
+#hot{
+	text-align: center;
+	padding:0 0 10% 0;
+}
+#hot h1{
+	color: #207a16;
+}
+#hot hr{
+	width: 100%;
+	height: 1px;
+	background: #eee;
+	margin-top: 7%;
+	margin-bottom: 4%;
+}
+#hot .recommend{
+	height: 100%;
+	color: #fff;
+	background: #207a16;
+}
+#hot .recommend h2{
+	padding-top: 30%;
+	font-size: 2em;
+}
+#hot .recommend p{
+	color: #ddd;
+}
+#hot .recommend p:nth-of-type(1){
+	padding-top: 10%;
+}
+#hot dt{
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: 30%;
+}
+#hot dt img{
+	width: 75%;
+
+	border-radius: 50%;
+	transition: 0.3s;
+}
+#hot dt img:hover{
+	transform: scale(1.5);
+}
+#hot dd:nth-of-type(1){
+	color: #333;
+	line-height: 2.2em;
+	font-weight: bold;
+	font-size: 14pt;
+}
+/* HOT结束 */
+
+/* address */
+#address{
+	text-align: center;
+	padding: 0;
+}
+.page-header h1{
+	color: #207a16;
+}
+#address hr{
+	width: 100%;
+	height: 1px;
+	background: #eee;
+	margin-top: 7%;
+	margin-bottom: 4%;
+}
+#address dl{
+	cursor: pointer;
+	background: #ebf5ea;
+	padding-bottom: 18%;
+}
+#address a{
+	width: 30%;
+	height: 10%;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 7%;
+	display: inline-block;
+	display: none;
+	background: url(../images/phone.png) no-repeat center center;
+}
+#address .col-md-3{
+	position: relative;
+}
+#address .show dl{
+	color: #fff;
+	background: #207a16;
+}
+#address .show dl dd{
+	color: #fff;
+}
+#address .show a{
+	display: block;
+}
+#address dt{
+	width: 100%;
+	padding-bottom: 10%;
+}
+#address dt img{
+	width: 100%;
+	height: 200px;
+}
+#address dd:nth-of-type(1){
+	color: #207a16;
+	font-size: 12pt;
+	line-height: 2em;
+	font-weight: bold;	
+}
+/* address结束 */
+
+/* 会员中心 */
+#privilege{ 
+	margin-top: 7%;
+	padding: 0;
+	height: 500px;
+	position: relative; 
+	background-size: cover; 
+	background-attachment: fixed; 
+	background-repeat: no-repeat; 
+	background-position: center 70% ; 
+	background-image: url("../images/coffeeBg.jpg"); 
+	cursor: pointer;
+}
+#privilege>div{
+	width: 13%;
+	height: 16%;
+	color: #fff;
+	text-align: center;
+	border: 2px solid #fff;
+	border-radius: 2%;
+	left: 50%; top:50%; 
+	transform: translateX(-50%) translateY(-50%); 
+	position: absolute;
+}
+/* 会员中心结束 */
+
+/* ABOUT */
+#about{
+	padding: 10% 0 0 0;
+}
+#about .aboutImg{
+	height: 100%;
+	padding: 0;
+}
+#about img{
+	width: 100%;
+	height: 100%;
+}
+#about .aboutText{
+	color: #207a16;
+	padding: 4%;
+	background: #ebf5ea;
+}
+.aboutText hr{
+	height: 1px;
+	background: #ddd;
+}
+.aboutText p{
+	color: rgb(129,128,124);
+	text-indent: 2em;
+}
+/* ABOUT结束 */
+
+/* FOOTER */
+#footer{
+	width: 100%;
+	text-align: center;
+	background: #262524;
+	color: #fff;
+	padding: 1% 0 5% 0;
+	position: relative;
+}
+#footer .footerList a{
+	color: #fff;
+}
+#footer .footerList a:hover{
+	color: #207a16;
+}
+#footer .footerList li:nth-of-type(1) a{
+	color: #aaa;
+	font-size: 14pt;
+	line-height: 1.9;
+	font-weight: bold;
+}
+#footer .footerText{
+	width: 100%;
+	position: absolute;
+	bottom: 1%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#footer .footerText p{
+	font-size: 7pt;
+	line-height: 0.7;
+}
+
+/* FOOTER */
+
+/* FOOTER结束 */
+
+@media screen and (min-width:650px) and (max-width:850px){
+	/* 咖啡机 */
+	.machineText{
+		padding-top:30%;
+		background: rgb(40,126,32) url("../images/coffee2.png") no-repeat center 25%;
+	}
+	#carousel .carousel-caption h1{
+		font-size: 42px;
+		margin-bottom: 20px;
+	}
+	#privilege>div{
+		width: 20%;
+		height: 15%;
+	}
+}
+@media screen and (min-width:850px) and (max-width:965px){
+	/* 咖啡机 */
+	.machineText{
+		padding-top:20%;
+		background: rgb(40,126,32) url("../images/coffee2.png") no-repeat center 15%;
+	}
+	
+}
+@media only screen and (max-width: 769px){
+	/* 咖啡图片 */
+	#coffeeImg{
+		display: none;
+	}
+	/* 咖啡机 */
+	.changeImg .dir{
+		left: 15px;
+	}
+	.changeImg .dirr{
+		left: 45px;
+	}
+	
+}
+@media only screen and (max-width: 641px) {
+	/* 导航条 */
+	#navbar .nav>li.active>a {
+    	background-color: #fff;
+    	border-top: none;
+	}
+	#navbar .navbar-nav>li>a {
+	    font-size: 16px;
+	    color: #666;
+	    height: 40px;
+	    line-height: 20px;
+	    border-top: 1px solid #ddd;
+	}
+	/* 轮播图 */
+    #carousel .item{
+        height: 200px;
+    }
+    #carousel .carousel-caption h1{
+		font-size: 20px;
+		margin-bottom: 00px;
+	}
+	#carousel .carousel-indicators{
+		bottom:0px;
+	}
+	/* 咖啡机 */
+	.machineText{
+		/* padding-top: 45%;
+		    	background-position: center 23%; */
+		display: none;
+	}
+	.machineText p{
+		font-size: 18px;
+	}
+	/* LIST */
+	#productList{
+		display: none;
+	}
+	/* hot推荐 */
+	#hot{
+		padding-top: 10%;
+	}
+	.recommend{
+		display: none;
+	}
+	/* 门店分布 */
+	#address a{
+		bottom: 3%;
+	}
+	/* 会员特权 */
+	#privilege>div{
+		width: 35%;
+		height: 17%;
+	}
+	/* about */
+	.aboutImg{
+		display: none;
+	}
+	/* footer */
+	#footer{
+		margin-top: 5%;
+		padding: 10% 0;
+	}
+	.footerList{
+		display: none;
+	}
+}
