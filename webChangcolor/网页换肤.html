@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>网页换肤</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		li{ list-style: none; float: left; }
+		a{ text-decoration: none; color: #333; } 
+		body,html{ height: 100%; }
+		#outer{ width: 500px; height: 60px; margin: 50px auto;}
+		#skin li{ width: 10px; height: 10px; padding: 5px; margin-right: 10px; cursor: pointer; }
+		#skin li:nth-child(1){ background: red; }
+		#skin li:nth-child(2){ background: green; }
+		#skin li:nth-child(3){ background: black; }
+
+		#nav{ border: 1px solid #fff; margin-top: 10px; overflow: hidden; height: 30px; background: green;  }
+		#nav li a{ padding: 0px 25px; line-height: 30px; color: #fff; border-right: 1px solid #fff; }
+		#nav li:last-child a{ border-right: 0; }
+	</style>
+	<link rel="stylesheet" href="./css/green.css" />
+	<script>
+		window.onload = function(){
+			var link = document.getElementsByTagName("link")[0];
+			var skin = document.getElementById("skin").getElementsByTagName("li");
+
+			for( var i =0; i<skin.length; i++ ){
+				skin[i].onclick = function(){
+					for( var a in skin ){
+						skin[a].className = "";
+					}
+					this.className = "current";
+					link['href'] = "./css/"+this.id+".css";
+				}
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<div id="outer">
+		<ul id="skin">
+			<li id="red" title="红色"></li>
+			<li id="green" class="current" title="绿色"></li>
+			<li id="black" title="黑色"></li>
+		</ul>
+		<br />
+		<ul id="nav">
+			<li><a href="javascript:">新闻</a></li>
+		    <li><a href="javascript:">娱乐</a></li>
+		    <li><a href="javascript:">体育</a></li>
+		    <li><a href="javascript:">电影</a></li>
+		    <li><a href="javascript:">音乐</a></li>
+		    <li><a href="javascript:">旅游</a></li>
+		</ul>
+	</div>
+</body>
+</html>

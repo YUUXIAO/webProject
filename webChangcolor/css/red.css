@@ -1,0 +1,3 @@
+body{ background: -webkit-linear-gradient(top,#e57585,#fff);}
+#nav{ background: #da101f; }
+#skin li.current{ border: 5px solid red; padding: 0; background: #fff; }
