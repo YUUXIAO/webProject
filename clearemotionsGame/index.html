@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>消除表情游戏</title>
+  <style>
+	*{ margin: 0px; padding: 0px; }
+	body{ background: #2a2218; }
+	#box{ width: 920px; height: 600px; margin: 0px auto; position: relative;  color: #f2f2f2; }
+	#top{ width: 100%; height: 145px; }
+	#top .title{ width: 100% ; height: 50px; text-align: center; line-height: 70px; font-size: 25px; font-weight: 900; }
+	#top .sm{ width: 100%; height: 50px; text-align: center; line-height: 50px;}
+	#top .but{ width: 140px; height: 40px; outline: 0; border: 1px solid #241d13; background: #a73f2d; color: #fff; border-radius: 5px; box-shadow: 0 0 15px #7a2a1d; font-size: 16px; margin-left:390px;cursor:pointer; }
+	#bom { width: 100%; height: 455px; background: #fff; position: absolute; left: 0px; top: 165px; color: #333; }
+	#bom .left{ width: 125px; height: 55px; float: left; padding: 10px;}
+	#bom .left p{ width: 145px; line-height: 25px; }
+	#bom .right{ width: 771px; height: 455px; border-left: 2px solid #333; float: left; position: relative; overflow: hidden; }
+	#bom .right img{ width: 34px; height: 34px; cursor: pointer; position: absolute; left: 0px; top: 0px; display: none;}
+  </style>
+  <script src="xk.js"></script>
+  <script>
+	$(function(){
+		var aBut = $('top').getElementsByTagName('input')[0]; //开始游戏
+		var aSpan = $('bom').getElementsByTagName('span');  //左边数字显示
+		var aDiv = $('bom').getElementsByTagName('div')[1]; //文字div盒子
+		var aImg = $('bom').getElementsByTagName('img')[0]; //掉下来的图片
+		var arrImg = ['img/1.png','img/2.png','img/3.png','img/4.png','img/5.png','img/6.png','img/7.png','img/8.png','img/9.png','img/10.png','img/11.png'];
+		var sdNum = 1;			//图片运行速度
+		var onOff = true;		//一个开关
+		for(var i=0;i<aSpan.length;i++){
+			aSpan[i].num = 0;	//把所有的得分和失分都归0
+		}
+		
+		aBut.onclick = function(){
+			this.value = '游戏进行中…';	//点击后，游戏开始变成游戏进行中……
+			this.disabled = true;			//让but按钮无法再次点击
+			var width = parseInt(getStyle(aDiv,'width'));	//获取图片活动的宽度
+			var height = parseInt(getStyle(aDiv,'height'))-24;//获取图片活动的高度，并且减去本身的高度
+			aImg.style.display = 'block';	//让QQ表情显示出来
+				aotu();						//开始执行代码
+			function aotu(){
+				onOff=true;					//如果为true就表示QQ表情落到最下面时会获得失分
+				var n = Math.round(Math.random()*(arrImg.length-1));//数组里面的随机显示QQ表情
+				var x = Math.round(Math.random()*(width-24));	//获得img随机在屏幕的位置
+				aImg.src = arrImg[n];				//随机显示QQ表情
+				aImg.style.left = x+'px';			//让img随机在屏幕的位置
+				doMove(aImg,'top',sdNum,height,function(){//落下去的时候
+					if( onOff==true ){		//如果为true就表示QQ表情落到最下面时会获得失分
+						shake($('bom'),'top',function(){	//掉下去后就开始抖整个窗口
+							aImg.style.top = '0px';	//让QQ表情回到0px的位置
+							aSpan[1].num++;					//失分上面+1
+							aSpan[1].innerHTML = aSpan[1].num;//显示在失分上面
+							if(aSpan[1].num == 10){			//如果失去分大于了10
+								//aImg.style.display = 'none';	//如果游戏结束，将QQ表情清除了
+								aBut.value = '开始游戏';	//可以重新点击开始游戏
+								aBut.disabled = false;		//让开始游戏显示出来
+								alert('游戏结束，你共获得'+aSpan[0].num+'分');//弹出游戏结束，并且显示得分
+								for(var i=0;i<aSpan.length;i++){	
+									aSpan[i].num = 0;		//得分和失分归零
+								}
+							}else{
+								aotu();
+							}
+						});	
+					}
+					
+				});
+			}
+
+				aImg.onclick =function(){
+					onOff = false;		//如果为false，哪怕QQ表情掉在最下面，也不会获得失分
+					aImg.src= 'img/qq.png';	//点击最后，QQ表情变成哭的样子
+					sdNum =sdNum+0.5;		//每一次点击，QQ表情下降的速度增加0.5
+					shake(aImg,'left',function(){	//点击之后开始抖
+						aImg.style.top = '0px';	//然后QQ表情恢复到0px的位置
+						aSpan[0].num++;			//获得得分+1
+						aSpan[0].innerHTML = aSpan[0].num;	//获得得分一枚
+						aotu();	//继续执行代码
+					});
+				}
+		}
+
+	})
+  </script>
+ </head>
+ <body>
+	<div id="box">
+		<div id="top">
+			<p class="title">你的鼠标有多快？</p>
+			<p class="sm">游戏说明：点击“开始游戏”，随机掉下QQ表情，点中它，千万别让他掉下来！！</p>
+			<input class="but" type="button" value="开始游戏">
+		</div>
+		<div id="bom">
+			<div class="left">
+				<p>得分：<span>0</span>分</p>
+				<p>失分：<span>0</span>分</p>
+			</div>
+			<div class="right" onselectstart="return false">
+				<img ondragstart="return false"/>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>
