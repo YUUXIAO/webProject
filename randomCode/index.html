@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>JS实现生成随机验证码并验证功能</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		.wrap{
+			width: 500px;
+			margin: 20px auto;
+		}
+		#text{
+			height: 30px;
+			box-sizing: border-box;
+			vertical-align: middle;
+			text-indent: 1em;
+		}
+		#code{
+			display: inline-block;
+			width: 80px; height: 30px;
+			background: #aaa;
+			text-align: center;
+			line-height: 30px;
+			color: #fff;
+			text-decoration: none;
+			letter-spacing: 7px;
+			padding-left: 7px;
+			vertical-align: middle;
+			font-weight: bold;
+		}
+		#btn{
+			width: 60px; height: 30px;
+			outline: 0;
+			border: #153021;
+			background: #499990;
+			color: #fff;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body onload= "createCode()">
+	<div class="wrap">
+		<input type="text" id="text" placeholder = "请输入验证码">
+		<a href="javascript:" id="code" onclick="createCode( this )"></a>
+		<input type="button" id="btn" value="验证" onclick="validate()">
+	</div>
+	
+	<script>
+		var checkCode = document.getElementById("code");
+		var btn = document.getElementById("btn");
+		
+		var code = "";
+
+		function createCode(){
+
+			code = "";
+			var codeLength = 4;
+
+			var random = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R', 'S','T','U','V','W','X','Y','Z'];
+
+			for( var i =0; i<codeLength; i++ ){
+				var index = Math.floor((Math.random() * 36));
+				code += random[index];
+				
+			}
+
+			checkCode.innerHTML = code;
+		}
+
+		function validate(){
+
+			var input = document.getElementById("text").value.toUpperCase();
+
+			if( input == 0 ){
+
+	            alert('请输入验证码');
+
+	        }else if( input != code){
+	            alert('验证码不正确，请重新输入');
+	            input = ' ';
+	            createCode();
+	        }else{
+	            window.open('http://www.baidu.com','_self');
+	        }
+
+		}
+
+	</script>
+
+
+
+</body>
+</html>
