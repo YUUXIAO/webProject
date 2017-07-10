@@ -58,4 +58,3 @@
 5、[详细购物页面](https://rawgit.com/YUUXIAO/webProject/master/dong/detail.html)<br>
 6、[咖啡响应式官网](https://rawgit.com/YUUXIAO/webProject/master/coffee/index.html)<br>
 7、[响应式后台](https://rawgit.com/YUUXIAO/webProject/master/behind/index.html)<br>
-8、[个人网站简历](https://rawgit.com/YUUXIAO/webProject/master/personal/index.html)<br>
