@@ -1,6 +1,5 @@
-鉴于好多小伙伴一直想问我一些前端的小问题，不过我不是大牛哦，但是可以互相交流一起进步，如果需要可以加微信号 18620365982，备注：“github-名字”，我看到的一般都会同意的，谢谢
-
 # webProject
+这个项目是我在学校学习的时候写的一些小demo,很多还有更好的写法，这里就当仅提供一些思路，抛砖引玉吧，欢迎您提出更好的建议共同讨论，谢谢！
 ### 图片特效系列<br>
 1、[模仿网易去音乐实现3D效果图片轮播](http://htmlpreview.github.io/?https://github.com/YUUXIAO/webProject/blob/master/Images/3DchangImg/index.html)<br>
 2、[模仿小米手机视觉差产品图片展示](http://htmlpreview.github.io/?https://github.com/YUUXIAO/webProject/blob/master/Images/M4image/%E5%9B%BE%E7%89%87%E4%BA%A7%E5%93%81%E5%B1%95%E7%A4%BA.html)<br>
@@ -52,4 +51,3 @@
 22、[夜晚星空闪烁](https://rawgit.com/YUUXIAO/webProject/master/starBlink/index.html)<br>
 23、[ 数码时钟翻转切换数字](https://rawgit.com/YUUXIAO/webProject/master/clock/index.html)<br>
 24、[JS实现生成随机验证码并验证功能](https://rawgit.com/YUUXIAO/webProject/master/randomCode/index.html)<br>
-25、[响应式后台](https://rawgit.com/YUUXIAO/webProject/master/behind/index.html)<br>
