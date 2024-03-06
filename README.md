@@ -1,3 +1,6 @@
+# 给自己写的谷歌插件 TabsManager打个广告
+这是一个我开发的谷歌插件，让您快捷、方便的管理你的浏览器选项卡和窗口，欢迎下载使用或给我提宝贵的建议👏
+https://chromewebstore.google.com/detail/tabsmanager/nehhlafcillkpfemipfjpankjahjlhhc
 # webProject
 这个项目是我在学校学习的时候写的一些小demo,很多还有更好的写法，这里就当仅提供一些思路，抛砖引玉吧，欢迎您提出更好的建议共同讨论，谢谢！
 ### 图片特效系列<br>
