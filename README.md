@@ -52,9 +52,3 @@
 23、[ 数码时钟翻转切换数字](https://rawgit.com/YUUXIAO/webProject/master/clock/index.html)<br>
 24、[JS实现生成随机验证码并验证功能](https://rawgit.com/YUUXIAO/webProject/master/randomCode/index.html)<br>
 
-
-### 求打赏
-<br>
-如果你看完了，感觉还不错，欢迎给我打赏 ———— 以激励我更多输出优质内容
-<br>
-<img src="https://user-images.githubusercontent.com/23305135/163545603-a096766e-7972-4a41-8f71-dfef123292db.jpg" width="330" height="400" />
